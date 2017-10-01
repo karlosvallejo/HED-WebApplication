@@ -1,4 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
@@ -11,18 +12,22 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import {routes} from './app.routes';
+import { PonentesComponent } from './ponentes/ponentes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    PonentesComponent
   ],
   imports: [
     routes,
     BrowserModule,
-    AngularFireAuthModule, AngularFireModule.initializeApp(firebaseConfig),
+    BrowserAnimationsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     Ng4FittextModule
   ],

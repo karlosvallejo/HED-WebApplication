@@ -1,0 +1,236 @@
+#containerGeneralPonentes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(230,130,255,0.7) no-repeat right;
+  background-size: cover;
+}
+
+#imgCubo {
+  position: absolute;
+  width: 37.5%;
+  height: 90%;
+  background: rgba(230,100,40,1) no-repeat center;
+  background-size: contain;
+  left: 56.25%;
+  top: 5%;
+
+}
+
+#containerSelectorYInfo {
+  position: absolute;
+  width: 87.5%;
+  height: 75%;
+  left: 6.25%;
+  top: 15%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#degrade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(to right, rgba(69,3,117,0.3) , rgba(30,255,214,0.3), rgba(30,255,214,0.3));
+}
+
+.containerSelectorPonentes {
+  position: absolute;
+  width: 21.25%;
+  height: 70%;
+  top: 15%;
+   background-color: brown;
+}
+
+
+
+.containerSelectorPonentes ul {
+  list-style: none;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  overflow: auto;
+}
+
+.containerSelectorPonentes ul li {
+  text-align: right;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+
+
+
+.textoSeleccion{
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+.textoSeleccion:hover{
+  color: rgba(255,255,255,1);
+  cursor: pointer;
+}
+.activeSelect{
+  color: rgba(255,255,255,1);
+}
+
+
+.containerInfoPonente {
+  position: absolute;
+
+  left: 35%;
+  width: 64.75%;
+  height: 100%;
+  color: white;
+   background-color: bisque;
+  overflow: auto;
+}
+
+.containerInfoPonente h2{
+  margin-bottom: 1%;
+  margin-top: 5%;
+  font-weight: normal;
+}
+
+.containerInfoPonente h5{
+  margin-top: 0;
+  font-weight: normal;
+}
+
+#infoLarga {
+  background: rgba(100,200,50,0.4);
+  width: 75%;
+  margin: auto;
+}
+
+#infoLarga p{
+  font-weight: normal;
+}
+
+
+
+.linkPortafolio {
+  display: inline-block;
+  background-color: rgba(255,255,255,0.1);
+  width: 15%;
+  clip-path: polygon(30% 0, 70% 0, 90% 50%, 70% 100%, 30% 100%, 10% 50%);
+  text-align: center;
+}
+
+
+.linkPortafolio  a {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+
+}
+
+.twitterLogo{
+
+  width: 40%;
+  padding: 25% 0;
+  margin: 10% auto;
+  background: url("/assets/general_images/logo/twitterLogo-01.svg") no-repeat center;
+  background-size: contain;
+}
+
+.facebookLogo {
+  width: 40%;
+  padding: 25% 0;
+  margin: 10% auto;
+  background: url("/assets/general_images/logo/logoFacebook-01.svg") no-repeat center;
+  background-size: contain;
+}
+
+.behanceLogo {
+  width: 40%;
+  padding: 25% 0;
+  margin: 10% auto;
+  background: url("/assets/general_images/logo/behance-01.svg") no-repeat center;
+  background-size: contain;
+}
+
+.linkedinLogo {
+  width: 40%;
+  padding: 25% 0;
+  margin: 10% auto;
+  background: url("/assets/general_images/logo/linkedInLogo-01.svg") no-repeat center;
+  background-size: contain;
+}
+
+.webLogo {
+  width: 40%;
+  padding: 25% 0;
+  margin: 10% auto;
+  background: url("/assets/general_images/logo/webLogo-01.svg") no-repeat center;
+  background-size: contain;
+}
+
+.containerResponsive {
+  display: none;
+}
+
+@media only screen and (max-width : 640px) {
+
+  .containerNoResponsive {
+    display: none;
+  }
+
+  .containerResponsive {
+    display: inherit;
+  }
+
+  #imgCubo{
+    width: 87.5%;
+    height: 75%;
+    left: 6.25%;
+    top: 5%;
+  }
+
+  #degrade {
+
+    background: linear-gradient(rgba(30,255,214,0.3) , rgba(69,3,117,0.7));
+  }
+
+  #containerSelectorYInfo {
+    width: 100%;
+    height: 77%;
+    left: 0;
+    top: 5%;
+    background-color: rgba(0,0,0,0.0);
+  }
+
+  .containerSelectorPonentes {
+    background-color: rgba(255,255,255,0.0);
+    width: 100%;
+    height: 22%;
+    top: 78%;
+  }
+
+  .containerInfoPonente {
+
+    left: 6.25%;
+    width: 87.5%;
+    height: 75%;
+    top: 0;
+  }
+
+  .containerSelectorPonentes ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .containerSelectorPonentes ul li {
+    text-align: center;
+    margin: 1%;
+    padding: 2%;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+
+
+}

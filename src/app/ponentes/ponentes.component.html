@@ -1,0 +1,81 @@
+<!--
+<div id="containerGeneralPonentes" [style.backgroundImage]="'url('+(identidadData |async)?.ponentes_background+')'">
+  <div id="imgCubo" [style.backgroundImage]="'url('+(identidadData |async)?.ponentes_support+')'">
+
+  </div>
+  -->
+<div id="containerGeneralPonentes">
+  <div id="imgCubo">
+  </div>
+
+
+  <div id="degrade">
+
+  </div>
+  <div id="containerSelectorYInfo">
+    <div class="containerSelectorPonentes containerNoResponsive"  #containerLi>
+
+
+      <ul>
+        <!--
+        <li *ngFor="let ponente of ponentesData | async"
+            (click)="asignarInfo(ponente.info, ponente.nombre, ponente.subFrase, ponente.urlWeb, ponente.urlBehance, ponente.urlFacebook, ponente.urlTwitter, ponente.urlLinkedIn)">
+          <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == ponente.nombre}" [fittext] [activateOnResize]="true" [container]="containerLi" [minFontSize]="5" [compression]="5.5">{{ponente.nombre }}</a>
+        </li>
+        -->
+
+        <li >
+          <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == 'karlos vallejo'}" [fittext] [activateOnResize]="true" [container]="containerLi" [minFontSize]="5" [compression]="5.5">Karlos Vallejo</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!--
+
+    <div class="containerSelectorPonentes containerResponsive"  #containerLiTwo>
+
+
+      <ul>
+        <li *ngFor="let ponente of ponentesData | async"
+            (click)="asignarInfo(ponente.info, ponente.nombre, ponente.subFrase, ponente.urlWeb, ponente.urlBehance, ponente.urlFacebook, ponente.urlTwitter, ponente.urlLinkedIn)">
+          <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == ponente.nombre}" [fittext] [activateOnResize]="true" [container]="containerLiTwo" [minFontSize]="5" [compression]="3">{{ponente.nombre }}</a>
+        </li>
+      </ul>
+
+    </div>
+-->
+
+  <!--  <div class="containerInfoPonente containerNoResponsive" [@desvanecerInfo]="desvanecer" (@desvanecerInfo.done)="animationDone($event)" #containerInfo> -->
+      <div class="containerInfoPonente containerNoResponsive" [@desvanecerInfo]="desvanecer"  #containerInfo>
+
+      <h2 [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="10" [compression]="3">{{nombre}}</h2>
+      <h5 [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="6" [compression]="7">{{subfrase}}</h5>
+        <div id="infoLarga">
+      <p  [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="8" [compression]="8">{{info}}</p>
+        </div>
+      <div class="linkPortafolio" *ngIf="urlWeb"><a href="{{urlWeb}}" target="_blank"><div class="webLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlPortafolio"><a href="{{urlPortafolio}}" target="_blank"><div class="behanceLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlfacebook"><a href="{{urlfacebook}}" target="_blank"><div class="facebookLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlPaloma"><a href="{{urlPaloma}}" target="_blank"><div class="twitterLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlLinkedIn"><a href="{{urlLinkedIn}}" target="_blank"><div class="linkedinLogo"></div></a></div>
+
+    </div>
+
+    <!--
+
+    <div class="containerInfoPonente containerResponsive" [@desvanecerInfo]="desvanecer" (@desvanecerInfo.done)="animationDone($event)" #containerInfoTwo>
+      <h2 [fittext] [activateOnResize]="true" [container]="containerInfoTwo" [minFontSize]="10" [compression]="2">{{nombre}}</h2>
+      <h5 [fittext] [activateOnResize]="true" [container]="containerInfoTwo" [minFontSize]="6" [compression]="4">{{subfrase}}</h5>
+      <p [fittext] [activateOnResize]="true" [container]="containerInfoTwo" [minFontSize]="8" [compression]="3.5">{{info}}</p>
+      <div class="linkPortafolio" *ngIf="urlWeb"><a href="{{urlWeb}}" target="_blank"><div class="webLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlPortafolio"><a href="{{urlPortafolio}}" target="_blank"><div class="behanceLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlfacebook"><a href="{{urlfacebook}}" target="_blank"><div class="facebookLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlPaloma"><a href="{{urlPaloma}}" target="_blank"><div class="twitterLogo"></div></a></div>
+      <div class="linkPortafolio" *ngIf="urlLinkedIn"><a href="{{urlLinkedIn}}" target="_blank"><div class="linkedinLogo"></div></a></div>
+    </div>
+-->
+
+  </div>
+</div>
