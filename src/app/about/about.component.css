@@ -2,5 +2,29 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(200,230,201 ,1);
+  background: rgba(128,222,234 ,1);
+}
+
+#selectorCategoriasAbout {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: 15%;
+  background: rgba(70,140,250,0.4);
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#infoCategoria{
+  position: absolute;
+  top: 40%;
+  width: 50%;
+  left: 6.25%;
+  background: rgba(40,100,160,0.6);
+}
+
+.categorias {
+  margin: auto 3%;
+  display: inline-block;
+  background: rgba(150,140,40,0.4);
 }

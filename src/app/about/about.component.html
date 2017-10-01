@@ -1,1 +1,14 @@
-<div id="backgroundAbout"></div>
+<div id="backgroundAbout">
+  <div id="selectorCategoriasAbout" #containerSelector>
+    <h2 class="categorias" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUE?</h2>
+    <h2 class="categorias" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUIEN?</h2>
+    <h2 class="categorias" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DONDE?</h2>
+    <h2 class="categorias" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CUANDO?</h2>
+  </div>
+
+  <div id="infoCategoria" #containerInfoText>
+   <p [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="8">{{info}}</p>
+  </div>
+
+</div>
+
