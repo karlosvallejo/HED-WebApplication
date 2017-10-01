@@ -1,23 +1,23 @@
-<div id="menuPrincial" >
+<div id="menuPrincial">
   <div id="logoHED" #menuContainer></div>
-  <!--
-  <div class="menuLink"><h2>{{(identidad_data| async)?.navbar.ponentes}}</h2></div>
-  <div class="menuLink"><h2>{{(identidad_data| async)?.navbar.agenda}}</h2></div>
-  <div class="menuLink"><h2>{{(identidad_data| async)?.navbar.evento}}</h2></div>
-  <div class="menuLink"><h2>{{(identidad_data| async)?.navbar.geleria}}</h2></div>
-  <div class="menuLink"><h2>{{(identidad_data| async)?.navbar.patrocinadores}}</h2></div>
-  <div class="menuLink"><h2>{{(identidad_data| async)?.navbar.experiencia}}</h2></div>
-  -->
 
-  <div class="menuLink" ><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5" [compression]="10">PONENTES</h2></div>
-  <div class="menuLink" id="agenta"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5" [compression]="10">AGENDA</h2></div>
-  <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5" [compression]="10">EL EVENTO</h2></div>
-  <div class="menuLink" id="galeria"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5" [compression]="10">GALERÍA</h2></div>
-  <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5" [compression]="10">PATROCINADORES</h2></div>
-  <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5" [compression]="10">REGISTRATE</h2></div>
+  <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+                            [compression]="10">{{(identidad_data| async)?.navbar.ponentes}}</h2></div>
+  <div class="menuLink" id="agenta"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer"
+                                        [minFontSize]="5" [compression]="10">{{(identidad_data|
+    async)?.navbar.agenda}}</h2></div>
+  <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+                            [compression]="10">{{(identidad_data| async)?.navbar.evento}}</h2></div>
+  <div class="menuLink" id="galeria"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer"
+                                         [minFontSize]="5" [compression]="10">{{(identidad_data|
+    async)?.navbar.galeria}}</h2></div>
+  <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+                            [compression]="10">{{(identidad_data| async)?.navbar.patrocinadores}}</h2></div>
+  <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+                            [compression]="10">{{(identidad_data| async)?.navbar.experiencia}}</h2></div>
   <div id="divLogos">
-  <div id="youtubeIcon"></div>
-  <div id="faceIcon"></div>
-  <div id="instaIcon"></div>
+    <div id="youtubeIcon"></div>
+    <div id="faceIcon"></div>
+    <div id="instaIcon"></div>
   </div>
 </div>
