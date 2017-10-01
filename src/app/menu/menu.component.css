@@ -17,6 +17,9 @@
   background: rgba(255,167,38 ,1) url("/assets/general_images/logo/logo_white.svg") no-repeat center;
   background-size: contain;
 }
+#logoHED:hover {
+  cursor: pointer;
+}
 
 .menuLink {
 
@@ -24,6 +27,11 @@
   width: 12.25%;
   background: rgba(255,112,67 ,1);
   margin: 0 0.125%;
+}
+
+.menuLink:hover {
+
+cursor: pointer;
 }
 
 .menuLink h2 {

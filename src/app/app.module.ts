@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import {routes} from './app.routes';
 import { PonentesComponent } from './ponentes/ponentes.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PonentesComponent } from './ponentes/ponentes.component';
     MenuComponent,
     FooterComponent,
     HomeComponent,
-    PonentesComponent
+    PonentesComponent,
+    AboutComponent
   ],
   imports: [
     routes,
