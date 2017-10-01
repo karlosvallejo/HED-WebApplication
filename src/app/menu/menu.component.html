@@ -1,10 +1,9 @@
 <div id="menuPrincial">
   <div id="logoHED"></div>
-  <div class="menuLink"><h2>PONENTES</h2></div>
-  <div class="menuLink">AGENDA</div>
-  <div class="menuLink">EL EVENTO</div>
-  <div class="menuLink">GALERIA</div>
-  <div class="menuLink">PATROCINADORES</div>
-  <div class="menuLink">REGISTRATE</div>
-
+  <div class="menuLink"><h2>{{(identidad_data| async)?.navbar.ponentes}}</h2></div>
+  <div class="menuLink">{{(identidad_data| async)?.navbar.agenda}}</div>
+  <div class="menuLink">{{(identidad_data| async)?.navbar.evento}}</div>
+  <div class="menuLink">{{(identidad_data| async)?.navbar.geleria}}</div>
+  <div class="menuLink">{{(identidad_data| async)?.navbar.patrocinadores}}</div>
+  <div class="menuLink">{{(identidad_data| async)?.navbar.experiencia}}</div>
 </div>
