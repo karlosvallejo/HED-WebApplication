@@ -1,4 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+@font-face {
+  font-family: 'Zwizz';
+  src: url('/assets/fonts/Zwizz-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Zwizz';
+  src: url('/assets/fonts/Zwizz-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  src: url('/assets/fonts/MyriadPro-Regular.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('/assets/fonts/RobotoMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('/assets/fonts/RobotoMono-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+
+
 body {
   margin: 0;
+  font-family: Zwizz, sans-serif;
 }

@@ -1,24 +1,76 @@
+
 #menuPrincial {
   position: fixed;
   width: 100%;
-  height: 10%;
+  height: 13%;
   z-index: 100;
-  background: rgba(255,202,40 ,1);
-  display: inline-flex;
+  background: rgba(92,107,192 ,1);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-around;
 }
 
 #logoHED{
-  width: 18.50%;
-  height: 100%;
-  background: rgba(255,167,38 ,1);
+  width: 18%;
+  height: 70%;
+  background: rgba(255,167,38 ,1) url("/assets/general_images/logo/logo_white.svg") no-repeat center;
+  background-size: contain;
 }
 
 .menuLink {
-  height: 100%;
+
+  height: 50%;
+  width: 12.25%;
   background: rgba(255,112,67 ,1);
   margin: 0 0.125%;
 }
 
 .menuLink h2 {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  font-family: Zwizz, sans-serif;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+#galeria {
+  width: 6%;
+}
 
+#agenta {
+  width: 6%;
+}
+
+#divLogos {
+  width: 12.25%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+
+}
+#youtubeIcon {
+  width: 15%;
+  height: 30%;
+
+  background: url("/assets/general_images/logo/twitterLogo-01.svg") center no-repeat;
+  background-size: contain;
+}
+
+#faceIcon {
+  width: 15%;
+  height: 30%;
+  background: url("/assets/general_images/logo/logoFacebook-01.svg") center no-repeat;
+  background-size: contain;
+}
+
+#instaIcon {
+  width: 15%;
+  height: 30%;
+  background: url("/assets/general_images/logo/behance-01.svg") center no-repeat;
+  background-size: contain;
 }
