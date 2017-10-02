@@ -30,11 +30,15 @@
 }
 
 .categorias {
-
+  color: rgba(255,255,255,0.6);
   margin: auto 2.5%;
   display: inline-block;
   background: rgba(150,140,40,0.4);
 
+}
+
+.seletedCategoria{
+  color: rgba(255,255,255,1);
 }
 
 .categorias:hover {
