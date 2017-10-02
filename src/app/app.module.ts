@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import {routes} from './app.routes';
 import { PonentesComponent } from './ponentes/ponentes.component';
 import { AboutComponent } from './about/about.component';
+import { AgendaComponent } from './agenda/agenda.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AboutComponent } from './about/about.component';
     FooterComponent,
     HomeComponent,
     PonentesComponent,
-    AboutComponent
+    AboutComponent,
+    AgendaComponent
   ],
   imports: [
     routes,
