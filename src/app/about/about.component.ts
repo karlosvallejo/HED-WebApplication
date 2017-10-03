@@ -63,20 +63,20 @@ seletedInfo: string;
       let i = this.containerSelector.nativeElement.scrollLeft;
       const init = setInterval(() => {
         this.containerSelector.nativeElement.scrollTo(i, 0);
-        i += 15;
-        if (i > this.maxScrollLeft - 15) {
+        i += 20;
+        if (i >= this.maxScrollLeft) {
           clearInterval(init);
         }
-      }, 20);
+      }, 15);
     } else if (this.containerSelector.nativeElement.scrollLeft > objetivo) {
       let i = this.containerSelector.nativeElement.scrollLeft;
       const init = setInterval(() => {
         this.containerSelector.nativeElement.scrollTo(i, 0);
-        i -= 15;
-        if (i < objetivo + 15) {
+        i -= 20;
+        if (i <= objetivo) {
           clearInterval(init);
         }
-      }, 20);
+      }, 15);
     }
     console.log(this.containerSelector.nativeElement.scrollLeft + ' Scroll total: ' + this.maxScrollLeft);
   //  this.containerSelector.nativeElement.scrollLeft = 350;
