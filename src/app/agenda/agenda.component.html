@@ -10,6 +10,6 @@
   </div>
 </div>
   <div id="cuadrosGroup">
-    <app-cuadro-info></app-cuadro-info>
+    <app-cuadro-info *ngFor="let evento of eventosJueves" [arrayEventos]="evento"></app-cuadro-info>
   </div>
 </div>

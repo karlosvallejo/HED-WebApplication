@@ -15,7 +15,7 @@ import {routes} from './app.routes';
 import { PonentesComponent } from './ponentes/ponentes.component';
 import { AboutComponent } from './about/about.component';
 import { AgendaComponent } from './agenda/agenda.component';
-import { CuadroInfoComponent } from './about/cuadro-info/cuadro-info.component';
+import { CuadroInfoComponent } from './agenda/cuadro-info/cuadro-info.component';
 
 @NgModule({
   declarations: [
