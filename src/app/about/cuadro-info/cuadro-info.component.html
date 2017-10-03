@@ -1,0 +1,13 @@
+<div id="cuadro">
+  <div class="cuadroMenu"></div>
+ <div class="cuadroLinea" #divAseguir>
+   <div id="divTituloDescripcion">
+   <h3 [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="1.5">{{titulo}}</h3>
+   <h5 [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="2">{{descripcion}}</h5>
+   </div>
+   <div id="divLodeAbajo">
+   <p [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="3">{{hora}}</p>
+   <p [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="3">{{idioma}}</p>
+   </div>
+ </div>
+</div>

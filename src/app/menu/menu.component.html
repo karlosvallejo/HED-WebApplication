@@ -5,7 +5,7 @@
                             [compression]="10" [routerLink]="['/ponentes']" >{{(identidad_data| async)?.navbar.ponentes}}</h2></div>
 
   <div class="menuLink" id="agenta"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer"
-                                        [minFontSize]="5" [compression]="10">{{(identidad_data|
+                                        [minFontSize]="5" [compression]="10" [routerLink]="['/agenda']">{{(identidad_data|
     async)?.navbar.agenda}}</h2></div>
   <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
                             [compression]="10" [routerLink]="['/about']">{{(identidad_data| async)?.navbar.evento}}</h2></div>

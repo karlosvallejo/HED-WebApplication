@@ -1,3 +1,15 @@
-<p>
-  agenda works!
-</p>
+<div id="containerAgenta">
+<div id="dias" #diaDiv>
+  <div class="diaGroup" >
+    <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.2">JUEVES</h2>
+    <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">02.11.2017</p>
+  </div>
+  <div class="diaGroup">
+    <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.25">VIERNES</h2>
+    <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">03.11.2017</p>
+  </div>
+</div>
+  <div id="cuadrosGroup">
+    <app-cuadro-info></app-cuadro-info>
+  </div>
+</div>
