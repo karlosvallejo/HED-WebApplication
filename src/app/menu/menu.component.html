@@ -2,20 +2,21 @@
   <div id="logoHED" #menuContainer [routerLink]="['/']"></div>
 
   <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
-                            [compression]="10" [routerLink]="['/ponentes']" >{{(identidad_data| async)?.navbar.ponentes}}</h2></div>
+                            [compression]="10" [routerLink]="['/ponentes']" >{{(identidad_data_Menu| async)?.navbar.ponentes}}</h2></div>
 
   <div class="menuLink" id="agenta"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer"
-                                        [minFontSize]="5" [compression]="10" [routerLink]="['/agenda']">{{(identidad_data|
+                                        [minFontSize]="5" [compression]="10" [routerLink]="['/agenda']">{{(identidad_data_Menu|
     async)?.navbar.agenda}}</h2></div>
   <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
-                            [compression]="10" [routerLink]="['/about']">{{(identidad_data| async)?.navbar.evento}}</h2></div>
+                            [compression]="10" [routerLink]="['/about']">{{(identidad_data_Menu| async)?.navbar.evento}}</h2></div>
+
   <div class="menuLink" id="galeria"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer"
-                                         [minFontSize]="5" [compression]="10">{{(identidad_data|
+                                         [minFontSize]="5" [compression]="10" [routerLink]="['/galeria']">{{(identidad_data_Menu|
     async)?.navbar.galeria}}</h2></div>
   <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
-                            [compression]="10">{{(identidad_data| async)?.navbar.patrocinadores}}</h2></div>
+                            [compression]="10">{{(identidad_data_Menu| async)?.navbar.patrocinadores}}</h2></div>
   <div class="menuLink"><h2 [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
-                            [compression]="10">{{(identidad_data| async)?.navbar.experiencia}}</h2></div>
+                            [compression]="10">{{(identidad_data_Menu| async)?.navbar.experiencia}}</h2></div>
   <div id="divLogos">
     <div id="youtubeIcon"></div>
     <div id="faceIcon"></div>

@@ -16,6 +16,8 @@ import { PonentesComponent } from './ponentes/ponentes.component';
 import { AboutComponent } from './about/about.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { CuadroInfoComponent } from './agenda/cuadro-info/cuadro-info.component';
+import { GaleriaComponent } from './galeria/galeria.component';
+import {GeneralServices} from './services/services.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { CuadroInfoComponent } from './agenda/cuadro-info/cuadro-info.component'
     PonentesComponent,
     AboutComponent,
     AgendaComponent,
-    CuadroInfoComponent
+    CuadroInfoComponent,
+    GaleriaComponent
   ],
   imports: [
     routes,
@@ -37,7 +40,7 @@ import { CuadroInfoComponent } from './agenda/cuadro-info/cuadro-info.component'
     AngularFireDatabaseModule,
     Ng4FittextModule
   ],
-  providers: [],
+  providers: [GeneralServices],
   bootstrap: [AppComponent]
 })
 export class AppModule {

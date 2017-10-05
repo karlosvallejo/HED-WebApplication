@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {GeneralServices} from '../services/services.service';
 
 @Component({
@@ -7,11 +7,10 @@ import {GeneralServices} from '../services/services.service';
   styleUrls: ['./menu.component.css'], providers:[GeneralServices]
 })
 export class MenuComponent implements OnInit {
-  identidad_data: any;
+ @Input() identidad_data_Menu: any;
 
 
   constructor(private services: GeneralServices) {
-    this.identidad_data = this.services.data_identidad;
   }
 
   ngOnInit() {

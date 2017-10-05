@@ -2,10 +2,10 @@ import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 import {HomeComponent} from './home/home.component';
 import {PonentesComponent} from './ponentes/ponentes.component';
-import {AboutComponent} from "./about/about.component";
-import {AgendaComponent} from "./agenda/agenda.component";
-//import {GaleriaComponent} from './galeria/galeria.component';
-//import {PatrocinadoresComponent} from './patrocinadores/patrocinadores.component';
+import {AboutComponent} from './about/about.component';
+import {AgendaComponent} from './agenda/agenda.component';
+import {GaleriaComponent} from './galeria/galeria.component';
+
 
 
 const appRoutes: Routes = [
@@ -13,8 +13,7 @@ const appRoutes: Routes = [
     {path: 'ponentes', component: PonentesComponent},
     {path: 'about', component: AboutComponent},
     {path: 'agenda', component: AgendaComponent},
- // {path: 'patrocinadores', component: PatrocinadoresComponent},
- // {path: 'acerca', component: QueEsComponent}
+    {path: 'galeria', component: GaleriaComponent}
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(appRoutes);
