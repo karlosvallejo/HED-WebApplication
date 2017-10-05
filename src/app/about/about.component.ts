@@ -1,5 +1,6 @@
 import {Component, OnInit, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
+declare const jQuery: any;
 
 @Component({
   selector: 'app-about',
@@ -34,7 +35,6 @@ seletedInfo: string;
   }
 
   ngOnInit() {
-
   }
 
   ngAfterViewInit() {
@@ -42,7 +42,7 @@ seletedInfo: string;
   }
 
 
-  public asignarInfo(selected: string){
+  public asignarInfo(selected: string) {
     switch (selected) {
       case 'QUE':
         this.selectedSection = 'QUE';
@@ -50,14 +50,30 @@ seletedInfo: string;
         break;
 
       case 'QUIEN':
-        this.selectedSection= 'QUIEN';
+        this.selectedSection = 'QUIEN';
         this.seletedInfo = this.infoQUIEN;
         break;
     }
   }
 
+  public calcularFinalScroll(): number {
+    this.maxScrollLeft = this.containerSelector.nativeElement.scrollWidth - this.containerSelector.nativeElement.clientWidth;
+    return this.maxScrollLeft;
+  }
+
   public onNextSearchPosition(objetivo: number): void {
 
+    if (this.containerSelector.nativeElement.scrollLeft < objetivo) {
+      jQuery(this.containerSelector.nativeElement).animate({
+        scrollLeft: '+=' + objetivo
+      }, 1500, 'easeInOutCubic');
+    } else if (this.containerSelector.nativeElement.scrollLeft > objetivo) {
+      jQuery(this.containerSelector.nativeElement).animate({
+        scrollLeft: '-=' + this.containerSelector.nativeElement.scrollLeft
+      }, 1500, 'easeInOutCubic');
+    }
+
+    /*
     this.maxScrollLeft = this.containerSelector.nativeElement.scrollWidth - this.containerSelector.nativeElement.clientWidth;
     if (this.containerSelector.nativeElement.scrollLeft < objetivo) {
       let i = this.containerSelector.nativeElement.scrollLeft;
@@ -82,6 +98,7 @@ seletedInfo: string;
   //  this.containerSelector.nativeElement.scrollLeft = 350;
 
    // this.containerSelector.nativeElement.scrollTo(350, 0);
+   */
   }
 
 

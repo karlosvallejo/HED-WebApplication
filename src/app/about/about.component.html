@@ -4,7 +4,7 @@
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUE'}" (click)="asignarInfo('QUE')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUE?</h2>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUIEN'}" (click)="onNextSearchPosition(0); asignarInfo('QUIEN')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUIEN?</h2>
     <h2 class="categorias" (click)="onNextSearchPosition(0)" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DONDE?</h2>
-    <h2 class="categorias"  (click)="onNextSearchPosition(maxScrollLeft)" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CUANDO?</h2>
+    <h2 class="categorias"  (click)="onNextSearchPosition(onNextSearchPosition(calcularFinalScroll()))" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CUANDO?</h2>
     <h2 class="categorias" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DONDE?</h2>
     </div>
 
