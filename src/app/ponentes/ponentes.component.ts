@@ -1,14 +1,12 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
-import {GeneralServices} from '../services/services.service';
-import {FirebaseObjectObservable, FirebaseListObservable} from 'angularfire2/database';
+import {Component, OnInit} from '@angular/core';
+import {AngularFireObject} from 'angularfire2/database';
 import {trigger, state, style, animate, transition} from '@angular/animations';
-//import {fadeInAnimation} from '../_animations/fade-in-component';
+// import {fadeInAnimation} from '../_animations/fade-in-component';
 
 @Component({
   selector: 'app-ponentes',
   templateUrl: './ponentes.component.html',
   styleUrls: ['./ponentes.component.css'],
-  providers: [GeneralServices],
   animations: [
     trigger('desvanecerInfo', [
       state('desvanecer', style({
@@ -25,7 +23,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
 })
 export class PonentesComponent implements OnInit {
 //  @HostBinding('@fadeInAnimation') fadeInAnimation: '';
-  ponentesData: FirebaseListObservable<any[]>;
+  ponentesData: AngularFireObject<any[]>;
   nombre: string;
   info: string;
   subfrase: string;
@@ -34,11 +32,11 @@ export class PonentesComponent implements OnInit {
   urlfacebook: string;
   urlPaloma: string;
   urlLinkedIn: string;
-  identidadData: FirebaseObjectObservable<any[]>;
+  identidadData: AngularFireObject<any[]>;
   desvanecer = 'nodesvanecer';
   datos: string[]= [];
 
-  constructor(private services: GeneralServices) {
+  constructor() {
 //    this.identidadData = services.getIdentidad();
 //    this.ponentesData = services.getPonentes();
 

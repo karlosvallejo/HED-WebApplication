@@ -1,21 +1,20 @@
 import {Injectable} from '@angular/core';
-import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
+import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {Observable} from 'rxjs/Observable';
-import * as firebase from 'firebase/app';
 
 
 @Injectable()
 export class GeneralServices {
   private idiomaActual: string;
-  evento_actual: string = "2017-2";
+  evento_actual: string;
 
-  data_identidad: FirebaseObjectObservable<any[]>;
-  general_info: FirebaseObjectObservable<any[]>;
+  data_identidad: AngularFireObject<any[]>;
+  general_info: AngularFireObject<any[]>;
 
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
     this.initIdiomas('es');
+    this.evento_actual = '2017-2';
   }
 
   initIdiomas(idioma: string): void {
@@ -27,4 +26,5 @@ export class GeneralServices {
     this.data_identidad = this.db.object('hed_identidad/' + idioma);
     this.general_info = this.db.object('general_info/');
   }
+
 }

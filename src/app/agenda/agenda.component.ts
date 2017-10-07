@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./agenda.component.css']
 })
 export class AgendaComponent implements OnInit {
-  eventosJueves: any[][]= [];
+  eventosJueves: String[][]= [];
   eventoGroup = [];
 
   constructor() {

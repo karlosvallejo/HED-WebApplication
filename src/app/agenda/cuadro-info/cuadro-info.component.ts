@@ -17,11 +17,13 @@ export class CuadroInfoComponent implements OnInit {
   }
 
   ngOnInit() {
+    /*
     for (const i of this.arrayEventos){
       console.log(i);
     }
+    */
     this.arrayDisplay = this.arrayEventos[0];
-    console.log(this.arrayEventos.length);
+  //  console.log(this.arrayEventos.length);
   }
   cambiarInfo(id: number): void {
     if (this.arrayDisplay === this.arrayEventos[id]) {

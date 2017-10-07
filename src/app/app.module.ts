@@ -5,10 +5,14 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {Ng4FittextModule} from 'ng4-fittext';
 import {MenuComponent} from './menu/menu.component';
+
+// AngularFire Imports -------------------------------------------
 import {firebaseConfig} from './fireConfig';
 import {AngularFireModule} from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+// --------------------------------------------------------------
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import {routes} from './app.routes';
@@ -35,9 +39,12 @@ import {GeneralServices} from './services/services.service';
     routes,
     BrowserModule,
     BrowserAnimationsModule,
-    AngularFireAuthModule,
+    // AngularFire2 ----------------------------
     AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
+    // -------------------------------------------
     Ng4FittextModule
   ],
   providers: [GeneralServices],

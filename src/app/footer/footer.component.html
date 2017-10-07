@@ -2,9 +2,11 @@
   <div id="containerEDICIONES" #footerContainer><h3 [fittext] [activateOnResize]="true" [container]="footerContainer"
                                                     [minFontSize]="5" [compression]="10">EDICIONES</h3></div>
   <div id="containerSelector" #selectorContainer>
+
     <div class="epoca" [fittext] [activateOnResize]="true" [container]="footerContainer" [minFontSize]="5"
-         [compression]="12" *ngFor="let evento of (general_info|async)?.eventos_acumulados">
+         [compression]="12" *ngFor="let evento of (general_info_footer|async)?.eventos_acumulados">
       <h4>{{evento}}</h4>
     </div>
+
   </div>
 </footer>
