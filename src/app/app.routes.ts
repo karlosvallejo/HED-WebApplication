@@ -9,11 +9,12 @@ import {GaleriaComponent} from './galeria/galeria.component';
 
 
 const appRoutes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'ponentes', component: PonentesComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'agenda', component: AgendaComponent},
-    {path: 'galeria', component: GaleriaComponent}
+    {path: '', redirectTo: 'home', pathMatch: 'full' },
+    {path: 'home', component: HomeComponent, data: { state: 'home' }},
+    {path: 'ponentes', component: PonentesComponent, data: { state: 'ponentes' }},
+    {path: 'agenda', component: AgendaComponent, data: { state: 'agenda' }},
+    {path: 'about', component: AboutComponent, data: { state: 'about' }},
+    {path: 'galeria', component: GaleriaComponent, data: { state: 'galeria' }}
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(appRoutes);

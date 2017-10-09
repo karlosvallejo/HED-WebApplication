@@ -9,7 +9,6 @@ import {MenuComponent} from './menu/menu.component';
 // AngularFire Imports -------------------------------------------
 import {firebaseConfig} from './fireConfig';
 import {AngularFireModule} from 'angularfire2';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 // --------------------------------------------------------------
@@ -41,7 +40,6 @@ import {GeneralServices} from './services/services.service';
     BrowserAnimationsModule,
     // AngularFire2 ----------------------------
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     // -------------------------------------------

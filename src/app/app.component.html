@@ -1,5 +1,7 @@
 <div id="backgroundGeneral"></div>
-<router-outlet></router-outlet>
+<div  [@routerTransition]="direction(getState(o))" (@routerTransition.done)="animationDone()">
+  <router-outlet #o="outlet"></router-outlet>
+</div>
 <app-menu [identidad_data_Menu]="identidad_data"></app-menu>
 <app-footer [general_info_footer]="general_info"></app-footer>
 <div id="grid">

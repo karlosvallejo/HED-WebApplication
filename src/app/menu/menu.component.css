@@ -34,15 +34,19 @@
 cursor: pointer;
 }
 
-.menuLink h2 {
+.textoMenu {
   position: relative;
   top: 50%;
   text-align: center;
   transform: translateY(-50%);
   font-family: Zwizz, sans-serif;
   font-weight: bold;
-  color: white;
+  color: rgba(255,255,255,0.5);
   margin: 0;
+}
+
+.activeMenu {
+  color: rgba(255,255,255,1);
 }
 #galeria {
   width: 6%;
