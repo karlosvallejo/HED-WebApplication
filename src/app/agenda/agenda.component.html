@@ -1,15 +1,15 @@
 <div id="containerAgenta">
 <div id="dias" #diaDiv>
-  <div class="diaGroup" >
+  <div class="diaGroup" (click)="cambiarDia('jueves')" [ngClass]="{'diaActivo': display == eventosJueves}">
     <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.2">JUEVES</h2>
     <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">02.11.2017</p>
   </div>
-  <div class="diaGroup">
+  <div class="diaGroup" (click)="cambiarDia('viernes')" [ngClass]="{'diaActivo': display == eventosViernes}">
     <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.25">VIERNES</h2>
     <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">03.11.2017</p>
   </div>
 </div>
-  <div id="cuadrosGroup">
-    <app-cuadro-info *ngFor="let evento of eventosJueves" [arrayEventos]="evento"></app-cuadro-info>
+  <div id="cuadrosGroup" [@cuadritosTransition]="diaSel">
+    <app-cuadro-info class="cuadritoComponente" *ngFor="let evento of display" [arrayEventos]="evento"></app-cuadro-info>
   </div>
 </div>

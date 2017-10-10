@@ -16,8 +16,16 @@
 .diaGroup {
   display: inline-block;
   background: rgba(180,60,150,0.4);
-  color: white;
+  color: rgba(255,255,255,0.6);
   margin: 0 2.2%;
+}
+
+.diaGroup:hover {
+  cursor: pointer;
+}
+
+.diaActivo {
+  color: rgba(255,255,255,1);
 }
 
 .diaGroup h2 {
@@ -35,4 +43,9 @@
   left: 6.25%;
   top: 35%;
   background: rgba(130,210,150,0.4);
+  overflow: hidden;
+}
+
+.cuadritoComponente {
+
 }

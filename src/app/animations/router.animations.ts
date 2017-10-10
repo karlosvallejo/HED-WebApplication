@@ -2,7 +2,8 @@ import {trigger, animate, style, group, query, transition} from '@angular/animat
 
 export const routerTransition = trigger('routerTransition', [
   transition('* => izquierda', [
-    query(':enter, :leave', style({ position: 'fixed', width: '100%',   height: '100%' })
+    query(':enter, :leave',
+      style({ position: 'fixed', width: '100%',   height: '100%' })
       , { optional: true }),
     group([
       query(':enter', [
