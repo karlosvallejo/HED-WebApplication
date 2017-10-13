@@ -3,6 +3,8 @@ function Cube() {
   this.pos = createVector(Math.random() * windowWidth, Math.random() * windowHeight); // single bar width
   this.acel = createVector(0, -Math.random()); // single bar width
   this.vel = createVector(0, 0); // single bar width
+  this.lejos = Math.random()*5; // single bar width
+
   // this.imgCube = null;
 
   //el mismo reset
@@ -19,9 +21,11 @@ function Cube() {
   };
 
   this.display = function () {
+    var m = map(mouseX, 0, windowWidth, this.tam / 2, -this.tam / 2);
+
 
     this.imgCube.resize(this.tam, this.tam);
-    image(this.imgCube, this.pos.x, this.pos.y);
+    image(this.imgCube, this.pos.x + m, this.pos.y);
     fill(255);
     // rect(this.pos.x, this.pos.y, this.tam, this.tam);
     this.move();
