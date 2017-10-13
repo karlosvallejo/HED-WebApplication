@@ -6,10 +6,10 @@ const query = (s, a, o= {optional: true}) => q(s, a, o);
 const animarHijos = trigger('cuadritosTransition', [
   transition('jueves => viernes', [
     sequence([
-      query(':leave',  stagger(200, [
+      query(':leave',  stagger(100, [
         animateChild()
       ])),
-      query(':enter',  stagger(300, [
+      query(':enter',  stagger(200, [
         animateChild()
       ])),
       group([
@@ -19,10 +19,10 @@ const animarHijos = trigger('cuadritosTransition', [
   ]),
   transition('viernes => jueves', [
       sequence([
-        query(':leave',  stagger(200, [
+        query(':leave',  stagger(100, [
           animateChild()
         ])),
-        query(':enter',  stagger(300, [
+        query(':enter',  stagger(200, [
           animateChild()
         ])),
         group([
@@ -43,6 +43,7 @@ export class AgendaComponent implements OnInit {
   eventosViernes: any[][]= [];
   display: any[][] = [];
   diaSel = 'jueves';
+  permitirCambio = true;
 
 
   constructor() {
@@ -67,17 +68,27 @@ export class AgendaComponent implements OnInit {
   }
 
   cambiarDia(dia: string): void {
-    switch (dia) {
-      case 'jueves':
-        this.display = this.eventosJueves;
-     break;
+    if (this.permitirCambio) {
+      switch (dia) {
+        case 'jueves':
+          this.display = this.eventosJueves;
+          this.permitirCambio = false;
+          setTimeout(() => {
+            this.permitirCambio = true;
+          }, 3000);
+          break;
 
-      case 'viernes':
-        this.display = this.eventosViernes;
-        break;
+        case 'viernes':
+          this.display = this.eventosViernes;
+          this.permitirCambio = false;
+          setTimeout(() => {
+            this.permitirCambio = true;
+          }, 3000);
+          break;
+      }
+
+      this.diaSel = dia;
     }
-
-    this.diaSel = dia;
   }
 
   ngOnInit() {

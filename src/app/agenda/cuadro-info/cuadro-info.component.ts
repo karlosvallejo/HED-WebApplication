@@ -1,20 +1,19 @@
 import {Component, HostBinding, Input, OnInit} from '@angular/core';
-import {trigger, transition, style, stagger, animate, query as q, group, keyframes} from '@angular/animations';
+import {trigger, transition, style, stagger, animate, query, group, keyframes} from '@angular/animations';
 
-const query = (s, a, o= {optional: true}) => q(s, a, o);
 
 
 export const enterAndLeave = trigger('cuadroTransision', [
 
   // route 'enter' transition
   transition(':enter', [
-    query('#cuadro', style({ opacity: 0, position: 'fixed'})),
+    query('#cuadro', style({ opacity: 0, position: 'absolute'})),
     // css styles at start of transition
     query('#cuadro',  [
-      style({ transform: 'translateY(-100%)'}),
-      animate('0.7s ease-in-out', keyframes([
-        style({position: 'relative', transform: 'translateY(-100%)', opacity: 0.0, offset: 0.05}),
-        style({position: 'relative', transform: 'translateY(0)', opacity: 1, offset: 1})
+      style({ transform: 'translateY(-120%)'}),
+      animate('0.6s ease-in-out', keyframes([
+        style({position: 'relative', transform: 'translateY(-120%)', opacity: 0.0, offset: 0.1}),
+        style({transform: 'translateY(0)', opacity: 1, offset: 1})
       ])),
     ]),
   ]),
@@ -23,7 +22,7 @@ export const enterAndLeave = trigger('cuadroTransision', [
     // css styles at start of transition
     query('#cuadro',  [
       style({ transform: 'translateY(0)' }),
-      animate('0.5s ease-in-out', style({transform: 'translateY(0)', opacity: 0})),
+      animate('0.4s ease-in-out', style({transform: 'translateY(0)', opacity: 0})),
     ]),
   ])
 ]);
