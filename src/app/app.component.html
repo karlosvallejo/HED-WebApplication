@@ -1,5 +1,7 @@
-<div id="backgroundGeneral"></div>
-<div  [@routerTransition]="direction(getState(o))" (@routerTransition.done)="animationDone()">
+<!--<div id="backgroundGeneral"></div>-->
+<div id="sketch-main"></div>
+
+<div [@routerTransition]="direction(getState(o))" (@routerTransition.done)="animationDone()">
   <router-outlet #o="outlet"></router-outlet>
 </div>
 <app-menu [identidad_data_Menu]="identidad_data"></app-menu>
