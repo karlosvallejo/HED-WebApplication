@@ -22,10 +22,12 @@
 
 .diaGroup:hover {
   cursor: pointer;
+  color: rgba(251, 173, 73, 0.9)
 }
 
 .diaActivo {
-  color: rgba(255,255,255,1);
+  color: rgba(251, 173, 73, 0.9)
+
 }
 
 .diaGroup h2 {

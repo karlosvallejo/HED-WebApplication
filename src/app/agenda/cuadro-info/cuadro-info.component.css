@@ -1,9 +1,10 @@
 #cuadro {
   width: 26.6%;
   height: 100%;
-  background: rgba(200,160,145,0.4);
+  background: rgba(200,160,145,0.0);
   display: inline-block;
-
+  color: white;
+  overflow: auto;
 }
 
 .cuadroMenu {
@@ -12,14 +13,16 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 
 
 .cuadroLinea {
-
-  width: 100%;
-  height: 90%;
-  background: rgba(120,70,210,0.5);
+  padding-top: 4%;
+  width: 99%;
+  height: 84%;
+  background: rgba(120,70,210,0.0);
+  border: thin solid rgba(251, 173, 73, 0.9);
 
 }
 
@@ -29,7 +32,7 @@
 
 #divTituloDescripcion {
   padding: 0 5%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.0);
   height: 90%;
 
 }
@@ -39,7 +42,7 @@
 #divLodeAbajo {
   padding: 0 5%;
   height: 10%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.0);
   display: flex;
   justify-content: space-between;
 }
