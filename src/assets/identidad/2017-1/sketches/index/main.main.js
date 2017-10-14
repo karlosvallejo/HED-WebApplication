@@ -3,6 +3,7 @@ var cubes = []; // array of Jitter objects
 
 var imgCube= null;
 
+// TODO: MOVER EL SKETCH P5JS A UN COMPONENTE BACKGROUND
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
@@ -33,19 +34,24 @@ function onresize() {
 function createCubes() {
   var cantidad = windowWidth / 150;
   cubes = [];
-  imgCube = loadImage("assets/identidad/2017-1/sketches/index/cube_fondo.gif");  // Load the image
+ // imgCube = loadImage("assets/identidad/2017-1/sketches/index/cube_fondo.gif");  // Load the image
 
   for (var i = 0; i < cantidad; i++) {
     cubes.push(new Cube());
+
     // console.log("it works");
   }
+
 }
 
 function drawCubes() {
   for (var i = 0; i < cubes.length; i++) {
+
     cubes[i].display();
   }
 }
+
+
 
 
 function draw() {

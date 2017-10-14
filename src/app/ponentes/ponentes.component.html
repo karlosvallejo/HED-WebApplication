@@ -25,7 +25,7 @@
         -->
 
         <li *ngFor="let ponente of ponentesDataLocal"
-            (click)="asignarInfo(ponente.info, ponente.nombre, ponente.subFrase, ponente.urlWeb, ponente.urlBehance, ponente.urlFacebook, ponente.urlTwitter, ponente.urlLinkedIn, ponente.cargo, ponente.hrefWeb)">
+            (click)="asignarInfo(ponente.info, ponente.nombre, ponente.subFrase, ponente.urlWeb, ponente.urlPortafolio, ponente.urlfacebook, ponente.urlPaloma, ponente.urlLinkedIn, ponente.cargo, ponente.hrefWeb)">
           <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == ponente.nombre}" [fittext] [activateOnResize]="true" [container]="containerLi" [minFontSize]="5" [compression]="5.5">{{ponente.nombre }}</a>
         </li>
 
