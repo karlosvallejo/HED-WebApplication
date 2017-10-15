@@ -5,7 +5,7 @@
   </div>
   -->
 <div id="containerGeneralPonentes">
-  <div id="imgCubo">
+  <div id="imgCubo" [style.background-image]="'url(' +urlFoto+ ')'">
   </div>
 
 
@@ -25,8 +25,8 @@
         -->
 
         <li *ngFor="let ponente of ponentesDataLocal"
-            (click)="asignarInfo(ponente.info, ponente.nombre, ponente.subFrase, ponente.urlWeb, ponente.urlPortafolio, ponente.urlfacebook, ponente.urlPaloma, ponente.urlLinkedIn, ponente.cargo, ponente.hrefWeb)">
-          <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == ponente.nombre}" [fittext] [activateOnResize]="true" [container]="containerLi" [minFontSize]="5" [compression]="5.5">{{ponente.nombre }}</a>
+            (click)="asignarInfo(ponente.info, ponente.nombre, ponente.subfrase, ponente.urlWeb, ponente.urlPortafolio, ponente.urlfacebook, ponente.urlPaloma, ponente.urlLinkedIn, ponente.cargo, ponente.hrefWeb, ponente.urlFoto)">
+          <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == ponente.nombre}" [fittext] [activateOnResize]="true" [container]="containerLi" [minFontSize]="5" [compression]="8">{{ponente.nombre }}</a>
         </li>
 
 
@@ -56,20 +56,25 @@
           <h2 [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="10" [compression]="2">{{nombre}}</h2>
           <h5 [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="6" [compression]="7">{{subfrase}}</h5>
             <div id="infoLarga">
-          <p  [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="8" [compression]="9">{{info}}</p>
+          <p  [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="8" [compression]="11">{{info}}</p>
             </div>
             <div id="divLogosInfo">
           <div id="direccionWeb" *ngIf="urlWeb">
             <a [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="8" [compression]="7" href="{{hrefWeb}}" target="_blank">{{urlWeb}}</a>
-            <h3 [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="8" [compression]="9">{{cargo}}</h3>
+
           </div>
+
               <div id="redesSocialesIcons">
           <div class="linkPortafolio" *ngIf="urlPortafolio"><a href="{{urlPortafolio}}" target="_blank"><div class="behanceLogo"></div></a></div>
           <div class="linkPortafolio" *ngIf="urlfacebook"><a href="{{urlfacebook}}" target="_blank"><div class="facebookLogo"></div></a></div>
           <div class="linkPortafolio" *ngIf="urlPaloma"><a href="{{urlPaloma}}" target="_blank"><div class="twitterLogo"></div></a></div>
           <div class="linkPortafolio" *ngIf="urlLinkedIn"><a href="{{urlLinkedIn}}" target="_blank"><div class="linkedinLogo"></div></a></div>
               </div>
+
             </div>
+      <div id="cargoText">
+      <h3  [fittext] [activateOnResize]="true" [container]="containerInfo" [minFontSize]="8" [compression]="10">{{cargo}}</h3>
+      </div>
         </div>
 
         <!--

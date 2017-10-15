@@ -35,6 +35,7 @@ export class PonentesComponent implements OnInit {
   urlLinkedIn: string;
   cargo: string;
   hrefWeb: string;
+  urlFoto: string;
   identidadData: AngularFireObject<any[]>;
   desvanecer = 'nodesvanecer';
   datos: string[]= [];
@@ -43,7 +44,7 @@ export class PonentesComponent implements OnInit {
 //    this.identidadData = services.getIdentidad();
 //    this.ponentesData = services.getPonentes();
 
-    this.ponentesDataLocal = [{'nombre': 'karlos vallejo', 'subfrase': 'h01m1n1d n00b', 'urlWeb': 'ElH01m1do.com',
+    this.ponentesDataLocal = [{'nombre': 'KARLOS VALLEJO', 'subfrase': 'h01m1n1d n00b', 'urlWeb': 'ElH01m1do.com',
       'urlfacebook': 'notengo.com', 'urlPortafolio': 'facebook.com', 'urlPaloma': 'twitter.com',
       'urlLinkedIn': 'facebook.com', 'info': 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium' +
       ' doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae ' +
@@ -53,7 +54,10 @@ export class PonentesComponent implements OnInit {
       'labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam ' +
       'corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, ' +
       'qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas ' +
-      'nulla pariatur?', 'cargo': 'el papu de los papus/ Papulon INC'}, {'nombre': 'Pedro Gomes', 'subfrase': 'Portugal / ' +
+      'nulla pariatur?', 'cargo': 'el papu de los papus/ Papulon INC', 'urlFoto': '/assets/test/1.jpg'},
+
+
+      {'nombre': 'PEDRO GOMES', 'subfrase': 'Portugal / ' +
       'Aveiro', 'urlWeb': 'PEDROGOMESDESIGN.COM', 'hrefWeb': 'http://pedrogomesdesign.com', 'urlfacebook': 'https://www.face' +
        'book.com/pedrogomesdesign', 'urlPortafolio': 'https://www.behance.n' +
       'et/pedrogomes', 'urlPaloma': '', 'urlLinkedIn': '', 'info': 'Pedro Gomes es un premiado diseñador, empresario y ' +
@@ -63,7 +67,8 @@ export class PonentesComponent implements OnInit {
       'Trabajando globalmente desde Aveiro, Portugal; Pedro y su equipo han desarrollado una impresionante serie de proyectos ' +
       'empresariales que permiten el impacto global del diseño. Como soñador a tiempo completo y director creativo de su ' +
       'estudio, le encanta empujar los límites del diseño, aprovechando el poder de la estrategia de diseño para ofrecer, ' +
-      'la innovación entre plataformas y experiencias significativas.', 'cargo': 'Diseñador Industrial / Diseñador de Producto'}];
+      'la innovación entre plataformas y experiencias significativas.', 'cargo': 'Diseñador Industrial / Diseñador de ' +
+      'Producto', 'urlFoto': '/assets/identidad/2017-2/ponentes/pedro.jpg'}];
 
     this.info = this.ponentesDataLocal[0].info;
     this.nombre = this.ponentesDataLocal[0].nombre;
@@ -75,6 +80,7 @@ export class PonentesComponent implements OnInit {
     this.urlLinkedIn = this.ponentesDataLocal[0].urlLinkedIn;
     this.cargo = this.ponentesDataLocal[0].cargo;
     this.hrefWeb = this.ponentesDataLocal[0].hrefWeb;
+    this.urlFoto = this.ponentesDataLocal[0].urlFoto;
 
 
 /*
@@ -98,7 +104,8 @@ export class PonentesComponent implements OnInit {
 
 
   public asignarInfo(infotito: string, nombri: string, slogitan: string, websito: string,
-                     behancito: string, feisuri: string, palomaNoOp: string, linkin: string, cargin: string, hrefiso: string) {
+                     behancito: string, feisuri: string, palomaNoOp: string, linkin: string, cargin: string,
+                     hrefiso: string, urlfotin: string) {
     this.datos.push(infotito);
     this.datos.push(nombri);
     this.datos.push(slogitan);
@@ -109,6 +116,7 @@ export class PonentesComponent implements OnInit {
     this.datos.push(linkin);
     this.datos.push(cargin);
     this.datos.push(hrefiso);
+    this.datos.push(urlfotin);
     this.desvanecer = 'desvanecer';
 
   }
@@ -127,6 +135,7 @@ export class PonentesComponent implements OnInit {
       this.urlLinkedIn = this.datos[7];
       this.cargo = this.datos[8];
       this.hrefWeb = this.datos[9];
+      this.urlFoto = this.datos[10];
       this.desvanecer = 'nodesvanecer';
       this.datos = [];
     }
