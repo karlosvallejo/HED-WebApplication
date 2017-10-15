@@ -23,11 +23,15 @@
 
   position: absolute;
   top: 40%;
-  width: 50%;
+  width: 43.50%;
   left: 6.25%;
   color: white;
   background: rgba(40,100,160,0.0);
 
+}
+
+#infoCategoria h3{
+  color: rgba(253,144,64,1);
 }
 
 .categorias {
@@ -39,14 +43,23 @@
 }
 
 .seletedCategoria{
-  color: rgba(255,255,255,1);
+  color: rgba(253,144,64,0.9);
 }
 
 .categorias:hover {
   cursor: pointer;
+  color: rgba(253,144,64,0.9);
 }
 
 #mover {
 background: rgba(50,20,160,0.5);
 
+}
+
+
+#divImage {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  height: 45%;
 }

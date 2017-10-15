@@ -13,6 +13,7 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
 infoQUE: string;
 infoQUIEN: string;
+subtitulo: string;
 maxScrollLeft: number;
 selectedSection: string;
 seletedInfo: string;
@@ -31,6 +32,7 @@ seletedInfo: string;
       ' commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ' +
       'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
+
     this.seletedInfo = this.infoQUE;
   }
 
@@ -47,11 +49,19 @@ seletedInfo: string;
       case 'QUE':
         this.selectedSection = 'QUE';
         this.seletedInfo = this.infoQUE;
+        this.subtitulo = '';
         break;
 
       case 'QUIEN':
         this.selectedSection = 'QUIEN';
         this.seletedInfo = this.infoQUIEN;
+        this.subtitulo = 'INTEGRANTES DEL EQUIPO 2017-2';
+        break;
+
+      case 'DONDE':
+        this.selectedSection = 'DONDE';
+        this.seletedInfo = '';
+        this.subtitulo = '';
         break;
     }
   }
