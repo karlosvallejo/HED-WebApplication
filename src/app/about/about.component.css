@@ -25,13 +25,18 @@
   top: 40%;
   width: 43.50%;
   left: 6.25%;
-  color: white;
+
   background: rgba(40,100,160,0.0);
 
 }
 
 #infoCategoria h3{
   color: rgba(253,144,64,1);
+}
+
+#infoCategoria p{
+  font-family: RobotoMono, sans-serif;
+  color: rgba(255,255,255,1);
 }
 
 .categorias {
@@ -73,4 +78,42 @@ background: rgba(50,20,160,0.5);
   color: white;
   top: 50%;
   transform: translate(-50%,-20%);
+}
+
+
+#divContacto {
+  position: absolute;
+  left: 18.75%;
+  top: 45%;
+  width: 62.5%;
+}
+
+
+.pruebina {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 3% 0;
+}
+
+.contactoTextoDorado {
+  margin: 0;
+  margin-right: 4%;
+  color: rgba(253,144,64,1);
+}
+
+.contactoTextoBlanco {
+  margin: 0;
+  margin-left: 4%;
+  color: rgba(255,255,255,1);
+}
+
+#imagenQUE {
+  position: absolute;
+  left: 56.25%;
+  top: 40%;
+  width: 31.25%;
+  height: 45%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }

@@ -17,20 +17,25 @@ subtitulo: string;
 maxScrollLeft: number;
 selectedSection: string;
 seletedInfo: string;
+urlFoto: string;
 
 
   constructor() {
     this.selectedSection = 'QUE';
 
-    this.infoQUE = 'QUE Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' +
-      'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea' +
-      ' commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ' +
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+    this.infoQUE = 'Hoy es Diseño es organizado por estudiantes de Diseño Industrial y Diseño de Medios Interactivos de ' +
+      'la Universidad ICESI, que busca promover el diseño en la región. Durante el marco del evento se desarrollan conferencias,' +
+      ' Talleres, foros y muestras de diseño (entre otros), en donde participan representantes nacionales e ' +
+      'internacionales en el ámbito del diseño y todas sus ramas. <br> Está enfocado a la comunidad de diseño, sin embargo,' +
+      ' es una importante ventana para que empresarios y personas de diferentes disciplinas amplíen su percepción y ' +
+      'conocimiento del tema, para construir cultura de diseño.';
 
     this.infoQUIEN = 'QUien Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' +
       'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea' +
       ' commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ' +
       'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+
+    this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
 
 
     this.seletedInfo = this.infoQUE;
@@ -50,12 +55,14 @@ seletedInfo: string;
         this.selectedSection = 'QUE';
         this.seletedInfo = this.infoQUE;
         this.subtitulo = '';
+        this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
         break;
 
       case 'QUIEN':
         this.selectedSection = 'QUIEN';
         this.seletedInfo = this.infoQUIEN;
         this.subtitulo = 'INTEGRANTES DEL EQUIPO 2017-2';
+        this.urlFoto = '/assets/identidad/2017-2/identidad/fotoGrupo.png';
         break;
 
       case 'DONDE':
@@ -65,6 +72,11 @@ seletedInfo: string;
         break;
       case 'CUANDO':
         this.selectedSection = 'CUANDO';
+        this.seletedInfo = '';
+        this.subtitulo = '';
+        break;
+      case 'CONTACTO':
+        this.selectedSection = 'CONTACTO';
         this.seletedInfo = '';
         this.subtitulo = '';
         break;
