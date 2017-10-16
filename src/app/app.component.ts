@@ -10,8 +10,8 @@ import {routerTransition} from './animations/router.animations';
   animations: [routerTransition]
 })
 export class AppComponent implements OnInit {
-  identidad_data: Observable<any[]>;
-  general_info: Observable<any[]>;
+  identidad_data: any;
+  general_info: any;
 
   // variables para las animaciones del router
   secciones: string[];
@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.general_info = this.services.general_info.valueChanges();
-    this.identidad_data = this.services.data_identidad.valueChanges();
+    this.services.getGeneral_Info().valueChanges().subscribe(data => this.general_info = data);
+    this.services.getIdentidad().valueChanges().subscribe(data => this.identidad_data = data);
     this.secciones = ['home', 'ponentes', 'agenda', 'about', 'galeria'];
 
   }

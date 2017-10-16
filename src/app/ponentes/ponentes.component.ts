@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFireObject} from 'angularfire2/database';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 // import {fadeInAnimation} from '../_animations/fade-in-component';
 
@@ -23,7 +22,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
 })
 export class PonentesComponent implements OnInit {
 //  @HostBinding('@fadeInAnimation') fadeInAnimation: '';
-  ponentesData: AngularFireObject<any[]>;
+//  ponentesData: AngularFireObject<any[]>;
   ponentesDataLocal: any[];
   nombre: string;
   info: string;
@@ -36,7 +35,7 @@ export class PonentesComponent implements OnInit {
   cargo: string;
   hrefWeb: string;
   urlFoto: string;
-  identidadData: AngularFireObject<any[]>;
+//  identidadData: AngularFireObject<any[]>;
   desvanecer = 'nodesvanecer';
   datos: string[]= [];
 
