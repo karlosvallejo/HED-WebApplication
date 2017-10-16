@@ -63,6 +63,11 @@ seletedInfo: string;
         this.seletedInfo = '';
         this.subtitulo = '';
         break;
+      case 'CUANDO':
+        this.selectedSection = 'CUANDO';
+        this.seletedInfo = '';
+        this.subtitulo = '';
+        break;
     }
   }
 

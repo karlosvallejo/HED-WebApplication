@@ -4,12 +4,17 @@
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUE'}" (click)="asignarInfo('QUE')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUE?</h2>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUIEN'}" (mouseenter)="onNextSearchPosition(0)" (click)="asignarInfo('QUIEN')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUIEN?</h2>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'DONDE'}" (mouseenter)="onNextSearchPosition(0)" (click)="asignarInfo('DONDE')"  [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DONDE?</h2>
-    <h2 class="categorias"  (mouseenter)="onNextSearchPosition(onNextSearchPosition(calcularFinalScroll()))" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CUANDO?</h2>
-    <h2 class="categorias" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DONDE?</h2>
+    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CUANDO'}" (mouseenter)="onNextSearchPosition(onNextSearchPosition(calcularFinalScroll()))" (click)="asignarInfo('CUANDO')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CUANDO?</h2>
+    <!--<h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CONTACTO'}" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CONTACTO</h2>-->
     </div>
+
+
   <iframe *ngIf="selectedSection == 'DONDE'" id="divImage" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0335104705873!2d-76.53292528469565!3d3.341884797567281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a1eb92747ff7%3A0x109da9c9c87832bc!2sICESI!5e0!3m2!1sen!2sco!4v1508056545814" frameborder="0" style="border:0" allowfullscreen></iframe>
-<div ></div>
+  <h2 *ngIf="selectedSection == 'CUANDO'" id="fechina" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1">2/3 NOV 2017</h2>
+
+
   <div id="infoCategoria" #containerInfoText>
+
     <h3 *ngIf="subtitulo" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="7">{{subtitulo}}</h3>
     <p *ngIf="seletedInfo" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="8.5">{{seletedInfo}}</p>
 
