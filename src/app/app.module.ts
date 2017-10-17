@@ -20,7 +20,7 @@ import { AboutComponent } from './about/about.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { CuadroInfoComponent } from './agenda/cuadro-info/cuadro-info.component';
 import { GaleriaComponent } from './galeria/galeria.component';
-import {GeneralServices} from './services/services.service';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import {GeneralServices} from './services/services.service';
     // -------------------------------------------
     Ng4FittextModule
   ],
-  providers: [GeneralServices],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

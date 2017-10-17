@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {GeneralServices} from './services/services.service';
-import {Observable} from 'rxjs/Observable';
 import {routerTransition} from './animations/router.animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [routerTransition]
+  animations: [routerTransition],
+  providers: [GeneralServices]
 })
 export class AppComponent implements OnInit {
-  identidad_data: any;
-  general_info: any;
+  identidad_data: {};
+  general_info: {};
 
   // variables para las animaciones del router
   secciones: string[];
@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.services.getGeneral_Info().valueChanges().subscribe(data => this.general_info = data);
-    this.services.getIdentidad().valueChanges().subscribe(data => this.identidad_data = data);
+    this.services.getGeneral_Info().subscribe(data => this.general_info = data);
+    this.services.getIdentidad().subscribe(data => this.identidad_data = data);
     this.secciones = ['home', 'ponentes', 'agenda', 'about', 'galeria'];
 
   }

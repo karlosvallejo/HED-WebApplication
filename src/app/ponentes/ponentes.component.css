@@ -9,7 +9,7 @@
 #imgCubo {
   position: absolute;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   width: 50%;
   height: 65%;

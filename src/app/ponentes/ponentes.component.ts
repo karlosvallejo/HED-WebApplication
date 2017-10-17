@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
-// import {fadeInAnimation} from '../_animations/fade-in-component';
+import {GeneralServices} from '../services/services.service';
+import {Subscription} from "rxjs/Subscription";
+
 
 @Component({
   selector: 'app-ponentes',
@@ -20,9 +22,11 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
   ]
 
 })
-export class PonentesComponent implements OnInit {
-//  @HostBinding('@fadeInAnimation') fadeInAnimation: '';
-//  ponentesData: AngularFireObject<any[]>;
+export class PonentesComponent implements OnInit, OnDestroy {
+
+
+  ponentesData: {};
+  ponentesDataSus: Subscription;
   ponentesDataLocal: any[];
   nombre: string;
   info: string;
@@ -39,9 +43,8 @@ export class PonentesComponent implements OnInit {
   desvanecer = 'nodesvanecer';
   datos: string[]= [];
 
-  constructor() {
-//    this.identidadData = services.getIdentidad();
-//    this.ponentesData = services.getPonentes();
+  constructor(private services: GeneralServices) {
+    /*
 
     this.ponentesDataLocal = [{'nombre': 'KARLOS VALLEJO', 'subfrase': 'h01m1n1d n00b', 'urlWeb': 'ElH01m1do.com',
       'urlfacebook': 'notengo.com', 'urlPortafolio': 'facebook.com', 'urlPaloma': 'twitter.com',
@@ -69,6 +72,7 @@ export class PonentesComponent implements OnInit {
       'la innovación entre plataformas y experiencias significativas.', 'cargo': 'Diseñador Industrial / Diseñador de ' +
       'Producto', 'urlFoto': '/assets/identidad/2017-2/ponentes/pedro.jpg'}];
 
+
     this.info = this.ponentesDataLocal[0].info;
     this.nombre = this.ponentesDataLocal[0].nombre;
     this.subfrase = this.ponentesDataLocal[0].subfrase;
@@ -80,26 +84,36 @@ export class PonentesComponent implements OnInit {
     this.cargo = this.ponentesDataLocal[0].cargo;
     this.hrefWeb = this.ponentesDataLocal[0].hrefWeb;
     this.urlFoto = this.ponentesDataLocal[0].urlFoto;
+  */
 
-
-/*
-    this.ponentesData.subscribe(items => {
-      // items is an array
-      this.nombre = items[0].nombre;
-      this.subfrase = items[0].subFrase;
-      this.info = items[0].info;
-      this.urlWeb = items[0].urlWeb;
-      this.urlPortafolio = items[0].urlBehance;
-      this.urlfacebook = items[0].urlFacebook;
-      this.urlPaloma = items[0].urlTwitter;
-      this.urlLinkedIn = items[0].urlLinkedIn;
-      items.forEach(item => {
-        // this.nombres.push(item.nombre);
-        // this.info.push(item.info);
-      });
-    });
-    */
   }
+
+
+  ngOnInit() {
+      this.ponentesDataSus =  this.services.getPonentesInfo().subscribe(data => {
+      this.ponentesData = data;
+      this.nombre = this.ponentesData[0].nombre;
+      this.subfrase = this.ponentesData[0].pais + ' / ' + this.ponentesData[0].ciudad;
+      this.info = this.ponentesData[0].informacion;
+      this.urlWeb = this.ponentesData[0].redes.pagina_personal;
+      this.urlPortafolio = this.ponentesData[0].redes.behance;
+      this.urlfacebook = this.ponentesData[0].redes.facebook;
+      this.urlPaloma = this.ponentesData[0].redes.twitter;
+      this.urlLinkedIn = this.ponentesData[0].redes.linkedIn;
+      this.cargo = this.ponentesData[0].cargo;
+      this.hrefWeb = this.ponentesData[0].paginaPersonalAcortada;
+      this.urlFoto = this.ponentesData[0].src_image;
+    });
+
+
+
+  }
+
+  ngOnDestroy(): void {
+    this.ponentesDataSus.unsubscribe();
+  }
+
+
 
 
   public asignarInfo(infotito: string, nombri: string, slogitan: string, websito: string,
@@ -140,8 +154,4 @@ export class PonentesComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-
-
-  }
 }

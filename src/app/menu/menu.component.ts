@@ -10,10 +10,14 @@ export class MenuComponent implements OnInit {
  @Input() identidad_data_Menu: any;
 
 
+
   constructor() {
   }
 
   ngOnInit() {
+
   }
+
+
 
 }

@@ -67,21 +67,21 @@ cursor: pointer;
 }
 #youtubeIcon {
   width: 15%;
-  height: 30%;
-  background: url("/assets/general_images/logo/twitterLogo-01.svg") center no-repeat;
+  height: 40%;
+  background: url("/assets/general_images/logo/icon_youtube.svg") center no-repeat;
   background-size: contain;
 }
 
 #faceIcon {
   width: 15%;
-  height: 30%;
+  height: 40%;
   background: url("/assets/general_images/logo/logoFacebook-01.svg") center no-repeat;
   background-size: contain;
 }
 
 #instaIcon {
   width: 15%;
-  height: 30%;
-  background: url("/assets/general_images/logo/behance-01.svg") center no-repeat;
+  height: 40%;
+  background: url("/assets/general_images/logo/icon-ista.svg") center no-repeat;
   background-size: contain;
 }
