@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {GeneralServices} from '../services/services.service';
-import {Subscription} from "rxjs/Subscription";
+import {Subscription} from 'rxjs/Subscription';
 
 
 @Component({

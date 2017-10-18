@@ -39,6 +39,8 @@
 }
 
 #cuadrosGroup {
+  padding: 0;
+  margin: 0;
   position: absolute;
   width: 93.75%;
   height: 40%;
@@ -46,8 +48,4 @@
   top: 35%;
   background: rgba(130,210,150,0.0);
   overflow: hidden;
-}
-
-.cuadritoComponente {
-
 }

@@ -1,10 +1,11 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
-
+import {GeneralServices} from '../services/services.service';
 import {query as q, trigger, transition, group, sequence, animateChild, style, animate, stagger} from '@angular/animations';
+import {Subscription} from 'rxjs/Subscription';
 
 const query = (s, a, o= {optional: true}) => q(s, a, o);
 const animarHijos = trigger('cuadritosTransition', [
-  transition('jueves => viernes', [
+  transition('1 => 0', [
     sequence([
       query(':leave',  stagger(100, [
         animateChild()
@@ -16,20 +17,7 @@ const animarHijos = trigger('cuadritosTransition', [
 
       ])
     ])
-  ]),
-  transition('viernes => jueves', [
-      sequence([
-        query(':leave',  stagger(100, [
-          animateChild()
-        ])),
-        query(':enter',  stagger(200, [
-          animateChild()
-        ])),
-        group([
-
-        ])
-      ])
-  ]),
+  ])
 ]);
 
 @Component({
@@ -39,14 +27,15 @@ const animarHijos = trigger('cuadritosTransition', [
   animations: [animarHijos]
 })
 export class AgendaComponent implements OnInit {
-  eventosJueves: any[][]= [];
-  eventosViernes: any[][]= [];
-  display: any[][] = [];
-  diaSel = 'jueves';
+  diaSel: {actividades: any[], dia_semana: '', fecha: ''};
+  agendaData: any[];
+  actividades: any[];
+  agendaDataSus: Subscription;
   permitirCambio = true;
 
 
-  constructor() {
+  constructor(private services: GeneralServices) {
+    /*
     const primerEventoJueves = [{'titulo': 'INCRIPCION', 'descripcion': '', 'hora': '07:00_08:00 AM', 'idioma': ''}];
     const segundoEventoJueves = [{'titulo': 'PEDRO' +
     ' GOMEZ', 'descripcion': 'Will Design Destroy The World?', 'hora': '07:00_08:00 AM', 'idioma': 'INGLES'}, {'titulo': 'Torneo ' +
@@ -65,10 +54,18 @@ export class AgendaComponent implements OnInit {
     this.eventosViernes = [primerEventoViernes, segundoEventoViernes, tercerEventoViernes];
 
     this.display = this.eventosJueves;
+    */
   }
 
-  cambiarDia(dia: string): void {
+  cambiarDia(dia: {actividades: any[], dia_semana: '', fecha: ''}): void {
     if (this.permitirCambio) {
+      this.diaSel = dia;
+      this.permitirCambio = false;
+      this.actividades = this.diaSel.actividades;
+      setTimeout(() => {
+        this.permitirCambio = true;
+      }, 3000);
+/*
       switch (dia) {
         case 'jueves':
           this.display = this.eventosJueves;
@@ -85,21 +82,20 @@ export class AgendaComponent implements OnInit {
             this.permitirCambio = true;
           }, 3000);
           break;
-      }
 
-      this.diaSel = dia;
+      }
+*/
+ //     this.diaSel = dia;
     }
   }
 
   ngOnInit() {
-    /*
-    for (const i of this.eventosJueves){
-      for (const j of i){
-        console.log(j);
-        this.arraySend.push(j);
-      }
-    }
-    */
+    this.agendaDataSus =  this.services.getAgendaInfo().subscribe(data => {
+      this.agendaData = data;
+      this.diaSel = this.agendaData[0];
+      console.log(this.diaSel);
+      this.actividades = this.diaSel.actividades;
+    });
   }
 
 }

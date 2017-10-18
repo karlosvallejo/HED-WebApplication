@@ -1,12 +1,13 @@
 <div id="cuadro">
   <div class="cuadroMenu" #divAseguirDos>
     <div class="barraSeleccionado" *ngFor="let hola of arrayEventos, let i= index" (click)="cambiarInfo(i)" [ngClass]="{'barraSeleccionadoActive': hola.titulo == arrayDisplay.titulo}"></div>
-   <!-- <p *ngIf="(arrayEventos.length>1)" [fittext] [activateOnResize]="true" [container]="divAseguirDos" [minFontSize]="5" [compression]="3">EVENTOS SIMULTANEOS</p> -->
+    <p *ngIf="(arrayEventos.length>1)" [fittext] [activateOnResize]="true" [container]="divAseguirDos" [minFontSize]="5" [compression]="3">EVENTOS SIMULTANEOS</p>
   </div>
  <div class="cuadroLinea" #divAseguir>
    <div id="divTituloDescripcion">
    <h3 [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="1.5">{{arrayDisplay.titulo}}</h3>
-   <h5 [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="2">{{arrayDisplay.descripcion}}</h5>
+     <h4 [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="2.5">{{arrayDisplay.subtitulo}}</h4>
+   <h5 [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="3">{{arrayDisplay.descripcion}}</h5>
    </div>
    <div id="divLodeAbajo">
    <p [fittext] [activateOnResize]="true" [container]="divAseguir" [minFontSize]="5" [compression]="3">{{arrayDisplay.hora}}</p>

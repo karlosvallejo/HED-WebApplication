@@ -16,6 +16,8 @@ export class GeneralServices {
   general_info: Observable<any[]>;
   ponentesDataRef: AngularFireObject<any[]>;
   ponentesData: Observable<any[]>;
+  agendaDataRef: AngularFireObject<any[]>;
+  agendaData: Observable<any[]>;
 
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
@@ -38,8 +40,13 @@ export class GeneralServices {
   }
 
   loadDatosHedPorEpoca(epoca: string, idioma: string) {
+    // cargar ponentes
     this.ponentesDataRef = this.db.object(epoca + '/ponentes/' + idioma);
     this.ponentesData = this.ponentesDataRef.valueChanges();
+    // cargar agenda
+    this.agendaDataRef = this.db.object(epoca + '/agenda/' + idioma);
+    this.agendaData = this.agendaDataRef.valueChanges();
+
   }
 
   getIdentidad(): Observable<any[]> {
@@ -52,6 +59,10 @@ export class GeneralServices {
 
  getPonentesInfo(): Observable<any[]> {
     return this.ponentesData;
+ }
+
+ getAgendaInfo(): Observable<any[]> {
+    return this.agendaData;
  }
 
 }
