@@ -1,4 +1,4 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, HostBinding, OnDestroy, OnInit} from '@angular/core';
 import {GeneralServices} from '../services/services.service';
 import {query as q, trigger, transition, group, sequence, animateChild, style, animate, stagger} from '@angular/animations';
 import {Subscription} from 'rxjs/Subscription';
@@ -26,7 +26,7 @@ const animarHijos = trigger('cuadritosTransition', [
   styleUrls: ['./agenda.component.css'],
   animations: [animarHijos]
 })
-export class AgendaComponent implements OnInit {
+export class AgendaComponent implements OnInit, OnDestroy {
   diaSel: {actividades: any[], dia_semana: '', fecha: ''};
   agendaData: any[];
   actividades: any[];
@@ -96,6 +96,10 @@ export class AgendaComponent implements OnInit {
       console.log(this.diaSel);
       this.actividades = this.diaSel.actividades;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.agendaDataSus.unsubscribe();
   }
 
 }
