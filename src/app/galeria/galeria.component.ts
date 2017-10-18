@@ -1,4 +1,6 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {GeneralServices} from '../services/services.service';
+import {Subscription} from 'rxjs/Subscription';
 
 
 declare const jQuery: any;
@@ -8,22 +10,33 @@ declare const jQuery: any;
   templateUrl: './galeria.component.html',
   styleUrls: ['./galeria.component.css']
 })
-export class GaleriaComponent implements OnInit, AfterViewInit {
+export class GaleriaComponent implements OnInit, OnDestroy {
 
   @ViewChild('containerScrollGaleria', {read: ElementRef}) scroll: ElementRef;
   diferenceMaxScroll: number;
+  galeriaDataSus: Subscription;
+  galeriaData: any[];
 
-  constructor() { }
+  constructor(private services: GeneralServices) { }
 
   ngOnInit() {
-  }
+    this.galeriaDataSus =  this.services.getGaleriaInfo().subscribe(data => {
+      this.galeriaData = data;
+      console.log(this.galeriaData);
+    });
 
-  ngAfterViewInit(): void {
     this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
   }
+
+  ngOnDestroy(): void {
+    this.galeriaDataSus.unsubscribe();
+  }
+
 
   moverScroll(direccion: string) {
     this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
+    console.log(this.diferenceMaxScroll);
+    console.log(this.scroll.nativeElement.scrollLeft);
     switch (direccion) {
       case 'derecha':
           if (this.scroll.nativeElement.clientWidth > this.diferenceMaxScroll) {

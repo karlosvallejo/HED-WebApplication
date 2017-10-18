@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
+import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 
@@ -18,6 +18,8 @@ export class GeneralServices {
   ponentesData: Observable<any[]>;
   agendaDataRef: AngularFireObject<any[]>;
   agendaData: Observable<any[]>;
+  galeriaDataRef: AngularFireObject<any[]>;
+  galeriaData: Observable<any[]>;
 
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
@@ -46,7 +48,9 @@ export class GeneralServices {
     // cargar agenda
     this.agendaDataRef = this.db.object(epoca + '/agenda/' + idioma);
     this.agendaData = this.agendaDataRef.valueChanges();
-
+    // cargar Galeria
+    this.galeriaDataRef = this.db.object(epoca + '/galeria/' + idioma);
+    this.galeriaData = this.galeriaDataRef.valueChanges();
   }
 
   getIdentidad(): Observable<any[]> {
@@ -63,6 +67,10 @@ export class GeneralServices {
 
  getAgendaInfo(): Observable<any[]> {
     return this.agendaData;
+ }
+
+ getGaleriaInfo(): Observable<any[]> {
+    return this.galeriaData;
  }
 
 }
