@@ -1,5 +1,8 @@
 import {Component, OnInit, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
+import {GeneralServices} from '../services/services.service';
+import {Subscription} from "rxjs/Subscription";
+
 declare const jQuery: any;
 
 @Component({
@@ -13,22 +16,27 @@ export class AboutComponent implements OnInit, AfterViewInit {
 
 infoQUE: string;
 infoQUIEN: string;
+cuando: string;
+telefono: string;
 subtitulo: string;
 maxScrollLeft: number;
 selectedSection: string;
 seletedInfo: string;
 urlFoto: string;
+aboutDataSus: Subscription;
+aboutData: any;
 
 
-  constructor() {
+  constructor(private services: GeneralServices) {
     this.selectedSection = 'QUE';
-
+    /*
     this.infoQUE = 'Hoy es Diseño es organizado por estudiantes de Diseño Industrial y Diseño de Medios Interactivos de ' +
       'la Universidad ICESI, que busca promover el diseño en la región. Durante el marco del evento se desarrollan conferencias,' +
       ' Talleres, foros y muestras de diseño (entre otros), en donde participan representantes nacionales e ' +
       'internacionales en el ámbito del diseño y todas sus ramas. <br> Está enfocado a la comunidad de diseño, sin embargo,' +
       ' es una importante ventana para que empresarios y personas de diferentes disciplinas amplíen su percepción y ' +
       'conocimiento del tema, para construir cultura de diseño.';
+      */
 
     this.infoQUIEN = 'QUien Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' +
       'dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea' +
@@ -38,10 +46,19 @@ urlFoto: string;
     this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
 
 
-    this.seletedInfo = this.infoQUE;
+
   }
 
   ngOnInit() {
+    this.aboutDataSus =  this.services.getAboutInfo().subscribe(data => {
+      this.aboutData = data;
+      this.selectedSection = 'QUE';
+      this.infoQUE = this.aboutData.que;
+      this.infoQUIEN = this.aboutData.quien;
+      this.cuando = this.aboutData.cuando;
+      this.telefono =this.aboutData.telefono;
+      this.seletedInfo = this.infoQUE;
+    });
   }
 
   ngAfterViewInit() {

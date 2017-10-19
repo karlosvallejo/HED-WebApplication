@@ -20,6 +20,8 @@ export class GeneralServices {
   agendaData: Observable<any[]>;
   galeriaDataRef: AngularFireObject<any[]>;
   galeriaData: Observable<any[]>;
+  aboutDataRef: AngularFireObject<any[]>;
+  aboutData: Observable<any[]>;
 
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
@@ -51,6 +53,9 @@ export class GeneralServices {
     // cargar Galeria
     this.galeriaDataRef = this.db.object(epoca + '/galeria/' + idioma);
     this.galeriaData = this.galeriaDataRef.valueChanges();
+    // cargar About
+    this.aboutDataRef = this.db.object(epoca + '/about/' + idioma);
+    this.aboutData = this.aboutDataRef.valueChanges();
   }
 
   getIdentidad(): Observable<any[]> {
@@ -71,6 +76,10 @@ export class GeneralServices {
 
  getGaleriaInfo(): Observable<any[]> {
     return this.galeriaData;
+ }
+
+ getAboutInfo(): Observable<any[]> {
+    return this.aboutData;
  }
 
 }
