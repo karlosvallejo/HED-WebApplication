@@ -13,8 +13,10 @@
   -->
 </div>
 
-  <div id="cuadrosGroup" [@cuadritosTransition]="permitirCambio">
-    <app-cuadro-info class="cuadritoComponente" *ngFor="let evento of actividades" [arrayEventos]="evento"></app-cuadro-info>
+  <div id="cuadrosGroup" [@cuadritosTransition]="permitirCambio" #containerScrollAgenda>
+    <div class="barraParaScroll" id="scrollDer" (click)="moverScroll('derecha')"><div></div></div>
+    <div class="barraParaScroll" id="scrollIz" (click)="moverScroll('izquierda')"><div></div></div>
+    <app-cuadro-info class="cuadritoComponente" *ngFor="let evento of actividades; let first = first; let last = last" [arrayEventos]="evento" [ngClass]="{first: first, last: last }"></app-cuadro-info>
   </div>
 
 </div>

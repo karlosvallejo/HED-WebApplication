@@ -1,5 +1,5 @@
 #cuadro {
-  width: 26.6%;
+  width: 26.5%;
   height: 98%;
   margin: 0;
   padding: 0;
@@ -7,6 +7,7 @@
   display: inline-block;
   color: white;
   overflow: auto;
+  white-space: normal;
 }
 
 .cuadroMenu {
@@ -54,7 +55,7 @@
   margin: 0;
   padding: 5%;
   width: 90%;
-  height: 76%;
+  height: 75%;
   background: rgba(0,0,0,0.0);
   overflow: auto;
 }
@@ -63,8 +64,8 @@
 
 #divLodeAbajo {
   padding: 0 3%;
+  padding-top: 1.5%;
   margin: 0;
-  height: 10%;
   width: 90%;
   background: rgba(255,255,255,0.0);
   display: flex;

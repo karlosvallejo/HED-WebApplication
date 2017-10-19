@@ -12,7 +12,7 @@ export const enterAndLeave = trigger('cuadroTransision', [
     query('#cuadro',  [
       style({ transform: 'translateY(-120%)'}),
       animate('0.6s ease-in-out', keyframes([
-        style({position: 'relative', transform: 'translateY(-120%)', opacity: 0.0, offset: 0.1}),
+        style({position: 'relative', transform: 'translateY(-110%)', opacity: 0.0, offset: 0.1}),
         style({transform: 'translateY(0)', opacity: 1, offset: 1})
       ])),
     ]),

@@ -1,8 +1,9 @@
-import {Component, HostBinding, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, HostBinding, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {GeneralServices} from '../services/services.service';
 import {query as q, trigger, transition, group, sequence, animateChild, style, animate, stagger} from '@angular/animations';
 import {Subscription} from 'rxjs/Subscription';
 
+declare const jQuery: any;
 const query = (s, a, o= {optional: true}) => q(s, a, o);
 const animarHijos = trigger('cuadritosTransition', [
   transition('1 => 0', [
@@ -27,6 +28,8 @@ const animarHijos = trigger('cuadritosTransition', [
   animations: [animarHijos]
 })
 export class AgendaComponent implements OnInit, OnDestroy {
+  @ViewChild('containerScrollAgenda', {read: ElementRef}) scroll: ElementRef;
+  diferenceMaxScroll: number;
   diaSel: {actividades: any[], dia_semana: '', fecha: ''};
   agendaData: any[];
   actividades: any[];
@@ -59,12 +62,26 @@ export class AgendaComponent implements OnInit, OnDestroy {
 
   cambiarDia(dia: {actividades: any[], dia_semana: '', fecha: ''}): void {
     if (this.permitirCambio) {
-      this.diaSel = dia;
-      this.permitirCambio = false;
-      this.actividades = this.diaSel.actividades;
-      setTimeout(() => {
-        this.permitirCambio = true;
-      }, 3000);
+      if (this.scroll.nativeElement.scrollLeft > 0) {
+        jQuery(this.scroll.nativeElement).animate({
+          scrollLeft: '-=' + this.diferenceMaxScroll
+        }, 1500, 'easeInOutCubic', () => {
+          this.diaSel = dia;
+          this.permitirCambio = false;
+          this.actividades = this.diaSel.actividades;
+          setTimeout(() => {
+            this.permitirCambio = true;
+          }, 3000);
+        });
+      } else {
+        this.diaSel = dia;
+        this.permitirCambio = false;
+        this.actividades = this.diaSel.actividades;
+        setTimeout(() => {
+          this.permitirCambio = true;
+        }, 3000);
+      }
+
 /*
       switch (dia) {
         case 'jueves':
@@ -87,6 +104,39 @@ export class AgendaComponent implements OnInit, OnDestroy {
 */
  //     this.diaSel = dia;
     }
+  }
+
+
+  moverScroll(direccion: string) {
+    this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
+    console.log(this.diferenceMaxScroll);
+    console.log(this.scroll.nativeElement.scrollLeft);
+    switch (direccion) {
+      case 'derecha':
+        if (this.scroll.nativeElement.clientWidth > this.diferenceMaxScroll) {
+          jQuery(this.scroll.nativeElement).animate({
+            scrollLeft: '+=' + this.diferenceMaxScroll
+          }, 1500, 'easeInOutCubic');
+        } else {
+          jQuery(this.scroll.nativeElement).animate({
+            scrollLeft: '+=' + this.scroll.nativeElement.clientWidth / 2
+          }, 1500, 'easeInOutCubic');
+        }
+        break;
+
+      case 'izquierda':
+        if (this.scroll.nativeElement.clientWidth > this.diferenceMaxScroll) {
+          jQuery(this.scroll.nativeElement).animate({
+            scrollLeft: '-=' + this.diferenceMaxScroll
+          }, 1500, 'easeInOutCubic');
+        } else {
+          jQuery(this.scroll.nativeElement).animate({
+            scrollLeft: '-=' + this.scroll.nativeElement.clientWidth / 2
+          }, 1500, 'easeInOutCubic');
+        }
+        break;
+    }
+
   }
 
   ngOnInit() {

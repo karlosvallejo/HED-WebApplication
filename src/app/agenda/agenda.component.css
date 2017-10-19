@@ -39,13 +39,55 @@
 }
 
 #cuadrosGroup {
-  padding: 0;
+  padding-left: 6.25%;
   margin: 0;
   position: absolute;
   width: 93.75%;
   height: 40%;
-  left: 6.25%;
+  left: 0;
   top: 35%;
   background: rgba(130,210,150,0.0);
   overflow: hidden;
+  white-space: nowrap;
+}
+
+.barraParaScroll {
+  position: fixed;
+  height: 40%;
+  width: 6.25%;
+  background: rgba(0,0,0,0.0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.barraParaScroll:hover {
+  background: rgba(0,0,0,0.3);
+}
+
+#scrollDer {
+  right: 0;
+}
+
+
+#scrollDer div {
+  width: 60%;
+  height: 20%;
+  background: url("/assets/general_images/arrowDerecha.svg") center no-repeat;
+
+}
+
+#scrollIz {
+  left: 0;
+}
+
+#scrollIz div {
+  width: 60%;
+  height: 20%;
+  background: url("/assets/general_images/arrowIzquierda.svg") center no-repeat;
+}
+
+.last{
+  margin-right: 6.25%;
 }
