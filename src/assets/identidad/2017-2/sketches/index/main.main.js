@@ -7,15 +7,15 @@ var imgCube= null;
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent('sketch-main');
   canvas.style('z-index', '-1');
   canvas.position(0, 0);
-  canvas.parent('sketch-main');
   background(14, 6, 51);
   createCubes();
 }
 
 
-navbar = [];
+// navbar = [];
 
 
 function windowResized() {

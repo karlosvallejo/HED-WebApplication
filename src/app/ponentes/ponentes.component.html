@@ -20,7 +20,7 @@
 
         <li *ngFor="let ponente of ponentesData"
             (click)="asignarInfo(ponente.informacion, ponente.nombre, ponente.pais+' / '+ponente.ciudad, ponente.redes.pagina_personal, ponente.redes.behance, ponente.redes.facebook, ponente.redes.twitter, ponente.redes.linkedIn, ponente.cargo, ponente.redes.paginaPersonalAcortada, ponente.src_image)">
-          <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == ponente.nombre}" [fittext] [activateOnResize]="true" [container]="containerLi" [minFontSize]="5" [compression]="5.5">{{ponente.nombre }}</a>
+          <a class="textoSeleccion" [ngClass]="{'activeSelect': nombre == ponente.nombre}" [fittext] [activateOnResize]="true" [container]="containerLi" [minFontSize]="5" [compression]="8">{{ponente.nombre }}</a>
         </li>
 
         <!--

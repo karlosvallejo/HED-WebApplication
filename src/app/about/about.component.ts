@@ -1,7 +1,7 @@
-import {Component, OnInit, ElementRef, ViewChild, AfterViewInit} from '@angular/core';
+import {Component, OnInit, ElementRef, ViewChild, AfterViewInit, OnDestroy} from '@angular/core';
 import {trigger, state, style, transition, animate} from '@angular/animations';
 import {GeneralServices} from '../services/services.service';
-import {Subscription} from "rxjs/Subscription";
+import {Subscription} from 'rxjs/Subscription';
 
 declare const jQuery: any;
 
@@ -10,7 +10,9 @@ declare const jQuery: any;
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit, AfterViewInit {
+export class AboutComponent implements OnInit, AfterViewInit, OnDestroy {
+
+
   @ViewChild('containerSelector', {read: ElementRef})
   containerSelector: ElementRef;
 
@@ -56,9 +58,13 @@ aboutData: any;
       this.infoQUE = this.aboutData.que;
       this.infoQUIEN = this.aboutData.quien;
       this.cuando = this.aboutData.cuando;
-      this.telefono =this.aboutData.telefono;
+      this.telefono = this.aboutData.telefono;
       this.seletedInfo = this.infoQUE;
     });
+  }
+
+  ngOnDestroy(): void {
+   this.aboutDataSus.unsubscribe();
   }
 
   ngAfterViewInit() {
