@@ -95,13 +95,13 @@ export class PonentesComponent implements OnInit, OnDestroy {
       this.nombre = this.ponentesData[0].nombre;
       this.subfrase = this.ponentesData[0].pais + ' / ' + this.ponentesData[0].ciudad;
       this.info = this.ponentesData[0].informacion;
-      this.urlWeb = this.ponentesData[0].redes.pagina_personal;
       this.urlPortafolio = this.ponentesData[0].redes.behance;
       this.urlfacebook = this.ponentesData[0].redes.facebook;
       this.urlPaloma = this.ponentesData[0].redes.twitter;
       this.urlLinkedIn = this.ponentesData[0].redes.linkedIn;
       this.cargo = this.ponentesData[0].cargo;
-      this.hrefWeb = this.ponentesData[0].paginaPersonalAcortada;
+      this.hrefWeb = this.ponentesData[0].redes.paginaPersonalAcortada;
+      this.urlWeb = this.ponentesData[0].redes.pagina_personal;
       this.urlFoto = this.ponentesData[0].src_image;
     });
 
