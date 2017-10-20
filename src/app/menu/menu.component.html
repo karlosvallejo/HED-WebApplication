@@ -1,17 +1,35 @@
 <div id="menuPrincial" *ngIf="identidad_data_Menu">
 
-  <div id="logoHED" #menuContainer [routerLink]="['/']"></div>
+  <div id="logoHED" class="noResponsive" #menuContainer [routerLink]="['/']"></div>
 
-  <div class="menuLink"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+  <div class="menuLink noResponsive"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
                             [compression]="10" [routerLink]="['/ponentes']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.ponentes}}</h2></div>
 
-  <div class="menuLink" id="agenta"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer"
+  <div class="menuLink noResponsive" id="agenta"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer"
                                         [minFontSize]="5" [compression]="10" [routerLink]="['/agenda']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.agenda}}</h2></div>
-  <div class="menuLink"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+  <div class="menuLink noResponsive"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
                             [compression]="10" [routerLink]="['/about']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.evento}}</h2></div>
 
-  <div class="menuLink" id="galeria"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer"
+  <div class="menuLink noResponsive" id="galeria"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer"
                                          [minFontSize]="5" [compression]="10" [routerLink]="['/galeria']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.galeria}}</h2></div>
+
+  <div class="menuLink responsive"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+                            [compression]="4" [routerLink]="['/ponentes']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.ponentes}}</h2></div>
+
+
+
+  <div class="menuLink responsive" id="agenta"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer"
+                                        [minFontSize]="5" [compression]="4" [routerLink]="['/agenda']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.agenda}}</h2></div>
+
+  <div id="logoHED" class="responsive" #menuContainer [routerLink]="['/']"></div>
+
+  <div class="menuLink responsive"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
+                            [compression]="4" [routerLink]="['/about']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.evento}}</h2></div>
+
+  <div class="menuLink responsive" id="galeria"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer"
+                                         [minFontSize]="5" [compression]="4" [routerLink]="['/galeria']" routerLinkActive="activeMenu">{{identidad_data_Menu.navbar.galeria}}</h2></div>
+
+
 
   <!-- <div class="menuLink"><h2 class="textoMenu" [fittext] [activateOnResize]="true" [container]="menuContainer" [minFontSize]="5"
                             [compression]="10">{{identidad_data_Menu.navbar.patrocinadores}}</h2> -->

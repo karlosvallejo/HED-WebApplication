@@ -20,6 +20,7 @@ import { AboutComponent } from './about/about.component';
 import { AgendaComponent } from './agenda/agenda.component';
 import { CuadroInfoComponent } from './agenda/cuadro-info/cuadro-info.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { BackgroundComponent } from './background/background.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { GaleriaComponent } from './galeria/galeria.component';
     AboutComponent,
     AgendaComponent,
     CuadroInfoComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    BackgroundComponent
   ],
   imports: [
     routes,

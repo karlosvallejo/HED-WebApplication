@@ -7,7 +7,7 @@ const sketch = function (p) {
   p.setup = function () {
     canvas = p.createCanvas(p.windowWidth, p.windowHeight);
     canvas.parent('sketch-main');
-    canvas.style('z-index', '-1');
+ //   canvas.style('z-index', '-1');
     canvas.position(0, 0);
     p.background(14, 6, 51);
     createCubes();
@@ -22,7 +22,7 @@ const sketch = function (p) {
 
   function onresize() {
     canvas.position(0, 0);
-    canvas.style('z-index', '-1');
+   // canvas.style('z-index', '-1');
   }
 
   function createCubes() {
@@ -101,7 +101,11 @@ function Cube(p) {
 
 }
 
+function getSketck() {
+  return sketch;
+}
 
-const sketchInsta =  new p5(sketch);
+
+//const sketchInsta =  new p5(sketch);
 
 
