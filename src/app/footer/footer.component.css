@@ -5,7 +5,7 @@
   bottom: 0;
   width: 100%;
   height: 8%;
-  background: rgba(77,182,172 ,0.2);
+  background: rgba(77,182,172 ,0.0);
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -20,7 +20,7 @@
   text-align: center;
   margin: 5% 0 0 0;
   color: white;
-  background: rgba(76,175,80 ,0.2);
+  background: rgba(76,175,80 ,0.0);
 }
 .responsive {
   display: none;
@@ -29,13 +29,13 @@
 #containerSelector {
   width: 18.5%;
   height: 100%;
-  background: rgba(76,175,80 ,0.2);
+  background: rgba(76,175,80 ,0.0);
   display: flex;
   justify-content: space-around;
 }
 
 .epoca {
-  background: rgba(94,53,177 ,0.2);
+  background: rgba(94,53,177 ,0.0);
   height: 60%;
   width: 20%;
   color: rgba(255,255,255,0.5);
@@ -83,7 +83,47 @@
   #containerSelector {
     width: 43.5%;
     height: 100%;
+
+  }
+
+  .epoca {
+
+
+    width: 40%;
+
+  }
+
+  #divLogos {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
+    background: rgba(0,0,0,0.0);
+
+  }
+
+
+
+  #youtubeIcon {
+    width: 20%;
+    height: 70%;
+    background: rgba(0,0,40,0.0) url("/assets/general_images/logo/icon_youtube.svg") center no-repeat;
+    background-size: contain;
+  }
+
+  #faceIcon {
+    width: 20%;
+    height: 70%;
+    background: url("/assets/general_images/logo/logoFacebook-01.svg") center no-repeat;
+    background-size: contain;
+  }
+
+  #instaIcon {
+    width: 20%;
+    height: 70%;
+    background: url("/assets/general_images/logo/icon-ista.svg") center no-repeat;
+    background-size: contain;
   }
 
 

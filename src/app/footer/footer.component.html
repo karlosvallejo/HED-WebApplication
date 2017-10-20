@@ -1,9 +1,20 @@
 <footer id="footerDiv">
-  <div id="containerEDICIONES" class="noResponsive" #footerContainer><h3 [fittext] [activateOnResize]="true" [container]="footerContainer"
-                                                    [minFontSize]="5" [compression]="10">EDICIONES</h3></div>
+  <div id="containerEDICIONES" class="noResponsive" #footerContainer>
 
-  <div id="containerEDICIONES" class="responsive" #footerContainer><h3 [fittext] [activateOnResize]="true" [container]="footerContainer"
-                                                                         [minFontSize]="5" [compression]="2">EDICIONES</h3></div>
+    <h3 [fittext] [activateOnResize]="true" [container]="footerContainer"
+                                                    [minFontSize]="5" [compression]="10">EDICIONES</h3>
+
+  </div>
+
+  <div id="containerEDICIONES" class="responsive" #footerContainer>
+    <h3 [fittext] [activateOnResize]="true" [container]="footerContainer"
+                                                                         [minFontSize]="5" [compression]="3">EDICIONES</h3>
+    <div id="divLogos">
+      <a href="https://www.youtube.com/channel/UCN249AgBpZv6FvafYId5fQQ" target="_blank" id="youtubeIcon"></a>
+      <a href="https://www.facebook.com/hoyesdiseno/" target="_blank"  id="faceIcon"></a>
+      <a href="https://www.instagram.com/_hoyesdiseno/" target="_blank" id="instaIcon"></a>
+    </div>
+  </div>
   <div id="containerSelector" *ngIf="general_info_footer" #selectorContainer>
 
     <div class="epoca noResponsive" [fittext] [activateOnResize]="true" [container]="footerContainer" [minFontSize]="5"
@@ -12,7 +23,7 @@
     </div>
 
     <div class="epoca responsive" [fittext] [activateOnResize]="true" [container]="footerContainer" [minFontSize]="5"
-         [compression]="5" *ngFor="let evento of general_info_footer.eventos_acumulados">
+         [compression]="3" *ngFor="let evento of general_info_footer.eventos_acumulados">
       <h4>{{evento}}</h4>
     </div>
 
