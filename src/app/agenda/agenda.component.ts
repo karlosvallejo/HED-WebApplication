@@ -1,10 +1,10 @@
 import {Component, ElementRef, HostBinding, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {GeneralServices} from '../services/services.service';
-import {query as q, trigger, transition, group, sequence, animateChild, style, animate, stagger} from '@angular/animations';
+import {query, trigger, transition, group, sequence, animateChild, style, animate, stagger} from '@angular/animations';
 import {Subscription} from 'rxjs/Subscription';
 
 declare const jQuery: any;
-const query = (s, a, o= {optional: true}) => q(s, a, o);
+
 const animarHijos = trigger('cuadritosTransition', [
   transition('1 => 0', [
     sequence([
