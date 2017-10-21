@@ -15,10 +15,6 @@ const sketch = function (p) {
     tamanin = p.displayWidth;
     p.background(14, 6, 51);
     createCubes();
-
-    setTimeout(() => {
-      p.resizeCanvas(p.windowWidth, p.windowHeight);
-    }, 4000);
   };
 
 

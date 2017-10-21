@@ -5,8 +5,9 @@
 
 
   <div id="containerFotos" #containerScrollGaleria>
-    <div class="fotoContainer" *ngFor="let fotin of galeriaData"><img class="foto"  src="{{fotin.imgSrc}}"><div class="hoverIMG"><h2>{{fotin.titulo}}</h2> <h4>{{fotin.descripcion}}</h4> <a *ngIf="fotin.post" href="{{fotin.post}}" target="_blank">Ver Post</a></div></div>
-
+    <div class="fotoContainer noResponsive" *ngFor="let fotin of galeriaData"  #esteAver><img class="foto"  src="{{fotin.imgSrc}}"  ><div class="hoverIMG"><h2 [fittext] [activateOnResize]="true" [container]="esteAver" [minFontSize]="5" [compression]="9">{{fotin.titulo}}</h2> <h4 [fittext] [activateOnResize]="true" [container]="esteAver" [minFontSize]="5" [compression]="11" >{{fotin.descripcion}}</h4> <a *ngIf="fotin.post" href="{{fotin.post}}" target="_blank"><h5 [fittext] [activateOnResize]="true" [container]="esteAver" [minFontSize]="5" [compression]="10">Ver Post</h5></a></div></div>
+    <div class="fotoContainer responsive" *ngFor="let fotin of galeriaData"><img class="foto"  src="{{fotin.imgSrc}}"><div class="hoverIMG"><h2 [fittext] [activateOnResize]="true" [container]="containerScrollGaleria" [minFontSize]="5" [compression]="3">{{fotin.titulo}}</h2> <h4 [fittext] [activateOnResize]="true" [container]="containerScrollGaleria" [minFontSize]="5" [compression]="4">{{fotin.descripcion}}</h4> <a *ngIf="fotin.post" href="{{fotin.post}}" target="_blank" [fittext] [activateOnResize]="true" [container]="containerScrollGaleria" [minFontSize]="5" [compression]="3">Ver Post</a></div></div>
+    <!--
     <div class="fotoContainer"><img class="foto"  src="/assets/test/1.jpg"><div class="hoverIMG"></div></div>
     <div class="fotoContainer"><img class="foto"  src="/assets/test/2.jpg"><div class="hoverIMG"></div></div>
     <div class="fotoContainer"><img class="foto"  src="/assets/test/3.jpg"><div class="hoverIMG"></div></div>
@@ -15,6 +16,6 @@
     <div class="fotoContainer"><img class="foto"  src="/assets/test/6.jpg"><div class="hoverIMG"></div></div>
     <div class="fotoContainer"><img class="foto"  src="/assets/test/7.jpg"><div class="hoverIMG"></div></div>
     <div class="fotoContainer"><img class="foto"  src="/assets/test/8.jpg"><div class="hoverIMG"></div></div>
-
+-->
   </div>
 </div>

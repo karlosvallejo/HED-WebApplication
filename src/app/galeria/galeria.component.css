@@ -4,7 +4,13 @@
   height: 100%;
   background: rgba(233,30,99 ,0.0);
 }
+.noResponsive {
+  display: block;
+}
 
+.responsive{
+  display: none;
+}
 #containerFotos {
   z-index: 1;
   position: absolute;
@@ -121,6 +127,14 @@
 
   #atras{
     display: none;
+  }
+
+  .noResponsive {
+    display: none;
+  }
+
+  .responsive{
+    display: block;
   }
 
   #containerFotos {

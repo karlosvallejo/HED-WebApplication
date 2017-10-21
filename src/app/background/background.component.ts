@@ -24,6 +24,7 @@ export class BackgroundComponent implements OnInit, AfterViewInit, AfterContentI
   }
 
   ngAfterViewInit(): void {
+
     this.canvasito =  new p5(getSketck(), this.containerSketch.nativeElement);
 
 
