@@ -114,7 +114,7 @@ export class AgendaComponent implements OnInit, OnDestroy {
     console.log(this.scroll.nativeElement.scrollLeft);
     switch (direccion) {
       case 'derecha':
-        if (this.scroll.nativeElement.clientWidth > this.diferenceMaxScroll) {
+        if ((this.scroll.nativeElement.clientWidth * 0.8) > this.diferenceMaxScroll) {
           jQuery(this.scroll.nativeElement).animate({
             scrollLeft: '+=' + this.diferenceMaxScroll
           }, 1500, 'easeInOutCubic');
