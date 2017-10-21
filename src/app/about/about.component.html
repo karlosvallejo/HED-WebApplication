@@ -25,7 +25,7 @@
     <p *ngIf="seletedInfo" class="responsive" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="4" [innerHTML]="seletedInfo"></p>
   </div>
 
-  <div *ngIf="selectedSection == 'QUE' || selectedSection == 'QUIEN'" id="imagenQUE" [style.background-image]="'url(' +urlFoto+ ')'"></div>
+  <div *ngIf="selectedSection == 'QUE' || selectedSection == 'QUIEN'" id="imagenQUE" [style.background-image]="'url('+'/HED-WebApplication'+ +urlFoto+ ')'"></div>
 
 
 </div>
