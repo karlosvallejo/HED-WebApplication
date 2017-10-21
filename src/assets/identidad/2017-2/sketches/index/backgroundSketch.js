@@ -9,7 +9,7 @@ const sketch = function (p) {
     canvas = p.createCanvas(p.windowWidth, p.windowHeight);
     console.log("window",p.windowWidth,p.windowHeight);
     console.log("display",p.displayWidth, p.displayHeight);
-  //  canvas.parent('sketch-main');
+    canvas.parent('sketch-main');
  //   canvas.style('z-index', '-1');
     canvas.position(0, 0);
     tamanin = p.displayWidth;
@@ -111,6 +111,6 @@ function getSketck() {
 }
 
 
-//const sketchInsta =  new p5(sketch);
+const sketchInsta =  new p5(sketch);
 
 
