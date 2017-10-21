@@ -19,8 +19,10 @@
 
 
   <div *ngIf="selectedSection == 'QUE' || selectedSection == 'QUIEN'" id="infoCategoria" #containerInfoText>
-    <h3 *ngIf="subtitulo" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="7">{{subtitulo}}</h3>
-    <p *ngIf="seletedInfo" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="8.5" [innerHTML]="seletedInfo"></p>
+    <h3 *ngIf="subtitulo" class="noResponsive" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="7">{{subtitulo}}</h3>
+    <p *ngIf="seletedInfo" class="noResponsive" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="8.5" [innerHTML]="seletedInfo"></p>
+    <h3 *ngIf="subtitulo" class="responsive" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="3">{{subtitulo}}</h3>
+    <p *ngIf="seletedInfo" class="responsive" [fittext] [activateOnResize]="true" [container]="containerInfoText" [minFontSize]="5" [compression]="4" [innerHTML]="seletedInfo"></p>
   </div>
 
   <div *ngIf="selectedSection == 'QUE' || selectedSection == 'QUIEN'" id="imagenQUE" [style.background-image]="'url(' +urlFoto+ ')'"></div>

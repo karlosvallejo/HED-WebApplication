@@ -1,6 +1,6 @@
 
 <div id="backgroundGeneral"></div>
-
+<app-background></app-background>
 <div [@routerTransition]="direction(getState(o))" (@routerTransition.done)="animationDone()">
   <router-outlet #o="outlet"></router-outlet>
 </div>
@@ -59,4 +59,4 @@
 </div>
 
 
-<app-background></app-background>
+

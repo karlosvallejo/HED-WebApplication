@@ -5,6 +5,14 @@
 /*  background: rgba(128,222,234 ,1); */
 }
 
+.responsive{
+  display: none;
+}
+
+.noResponsive{
+  display: block;
+}
+
 
 #selectorCategoriasAbout {
 
@@ -115,4 +123,35 @@ background: rgba(50,20,160,0.5);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+
+
+@media only screen and (max-width : 640px) {
+  .noResponsive{
+    display: none;
+  }
+  .responsive{
+    display: block;
+  }
+  #imagenQUE {
+    left: 0;
+    top: 55%;
+    width: 100%;
+    height: 30%;
+  }
+
+  #infoCategoria {
+
+    top: 22%;
+    width: 90%;
+    left: 5%;
+
+  }
+  #selectorCategoriasAbout {
+
+    top: 15%;
+
+
+  }
 }

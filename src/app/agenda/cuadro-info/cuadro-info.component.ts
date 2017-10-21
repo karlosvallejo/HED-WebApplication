@@ -22,7 +22,7 @@ export const enterAndLeave = trigger('cuadroTransision', [
     // css styles at start of transition
     query('#cuadro',  [
       style({ transform: 'translateY(0)' }),
-      animate('0.4s ease-in-out', style({transform: 'translateY(0)', opacity: 0})),
+      animate('0.7s ease-in-out', style({transform: 'translateY(0)', opacity: 0})),
     ]),
   ])
 ]);

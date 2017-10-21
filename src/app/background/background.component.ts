@@ -1,6 +1,5 @@
-import {AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 declare const getSketck: any;
-declare const p5: any;
 
 @Component({
   selector: 'app-background',
@@ -9,6 +8,7 @@ declare const p5: any;
 })
 export class BackgroundComponent implements OnInit, AfterViewInit, AfterContentInit {
 
+  @ViewChild('sketchPlane', {read: ElementRef}) containerSketch: ElementRef;
 
 
   canvasito: any;
@@ -20,11 +20,13 @@ export class BackgroundComponent implements OnInit, AfterViewInit, AfterContentI
 
   }
   ngAfterContentInit(): void {
-    this.canvasito =  new p5(getSketck());
+
   }
 
   ngAfterViewInit(): void {
-    this.canvasito.resizeCanvas(this.canvasito.windowWidth, this.canvasito.windowHeight);
+    this.canvasito =  new p5(getSketck(), this.containerSketch.nativeElement);
+
+
   }
 
 }

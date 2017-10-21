@@ -1,17 +1,18 @@
 <div id="containerAgenta">
 <div id="dias" #diaDiv *ngIf="agendaData">
-  <div class="diaGroup" *ngFor="let dia of agendaData" (click)="cambiarDia(dia)" [ngClass]="{'diaActivo': diaSel == dia}">
+  <div class="diaGroup noResponsive" *ngFor="let dia of agendaData" (click)="cambiarDia(dia)" [ngClass]="{'diaActivo': diaSel == dia}">
     <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.2">{{dia.dia_semana}}</h2>
     <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">{{dia.fecha}}</p>
   </div>
 
-  <!--
-  <div class="diaGroup" (click)="cambiarDia('viernes')" [ngClass]="{'diaActivo': display == eventosViernes}">
-    <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.25">{{this.segundoDia}}</h2>
-    <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">03.11.2017</p>
+  <div class="diaGroup responsive" *ngFor="let dia of agendaData" (click)="cambiarDia(dia)" [ngClass]="{'diaActivo': diaSel == dia}">
+    <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="0.94">{{dia.dia_semana}}</h2>
+    <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="3">{{dia.fecha}}</p>
   </div>
-  -->
+
 </div>
+
+
 
   <div id="cuadrosGroup" [@cuadritosTransition]="permitirCambio" #containerScrollAgenda>
     <div class="barraParaScroll" id="scrollDer" (click)="moverScroll('derecha')"><div></div></div>

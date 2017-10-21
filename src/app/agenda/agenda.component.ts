@@ -61,6 +61,7 @@ export class AgendaComponent implements OnInit, OnDestroy {
   }
 
   cambiarDia(dia: {actividades: any[], dia_semana: '', fecha: ''}): void {
+     this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
     if (this.permitirCambio) {
       if (this.scroll.nativeElement.scrollLeft > 0) {
         jQuery(this.scroll.nativeElement).animate({
@@ -71,7 +72,7 @@ export class AgendaComponent implements OnInit, OnDestroy {
           this.actividades = this.diaSel.actividades;
           setTimeout(() => {
             this.permitirCambio = true;
-          }, 3000);
+          }, 4000);
         });
       } else {
         this.diaSel = dia;
@@ -79,7 +80,7 @@ export class AgendaComponent implements OnInit, OnDestroy {
         this.actividades = this.diaSel.actividades;
         setTimeout(() => {
           this.permitirCambio = true;
-        }, 3000);
+        }, 4000);
       }
 
 /*

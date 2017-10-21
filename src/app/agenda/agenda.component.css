@@ -20,9 +20,12 @@
   margin: 0 2.2%;
 }
 
+
+
+
 .diaGroup:hover {
   cursor: pointer;
-  color: rgba(251, 173, 73, 0.9)
+ /* color: rgba(251, 173, 73, 0.9) */
 }
 
 .diaActivo {
@@ -32,10 +35,12 @@
 
 .diaGroup h2 {
   margin: 0;
+  user-select: none;
 }
 
 .diaGroup p {
   margin: 3% 0 0 0 ;
+  user-select: none;
 }
 
 #cuadrosGroup {
@@ -90,4 +95,41 @@
 
 .last{
   margin-right: 6.25%;
+}
+.responsive{
+  display: none;
+}
+
+.noResponsive {
+  display: inline-block;
+}
+
+
+@media only screen and (max-width : 640px) {
+
+
+  #cuadrosGroup {
+    width: 93.75%;
+    height: 50%;
+    top: 35%;
+    background: rgba(130,210,150,0.0);
+    overflow: auto;
+  }
+
+  .barraParaScroll {
+    display: none;
+  }
+
+  .diaGroup:hover {
+    cursor: none;
+  }
+
+  .noResponsive {
+    display: none;
+  }
+
+  .responsive {
+    display:inline-block;
+  }
+
 }

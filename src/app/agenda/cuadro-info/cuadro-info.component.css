@@ -90,3 +90,10 @@
 .barraSeleccionadoActive {
   background: rgba(255,255,255,1);
 }
+
+@media only screen and (max-width : 640px) {
+  #cuadro {
+    width: 80%;
+    height: 98%;
+  }
+}

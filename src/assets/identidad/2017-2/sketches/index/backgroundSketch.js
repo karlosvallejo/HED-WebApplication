@@ -3,19 +3,28 @@
 const sketch = function (p) {
   let canvas = null;
   let cubes = []; // array of Jitter objects
+  let tamanin;
 
   p.setup = function () {
     canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-    canvas.parent('sketch-main');
+    console.log("window",p.windowWidth,p.windowHeight);
+    console.log("display",p.displayWidth, p.displayHeight);
+  //  canvas.parent('sketch-main');
  //   canvas.style('z-index', '-1');
     canvas.position(0, 0);
+    tamanin = p.displayWidth;
     p.background(14, 6, 51);
     createCubes();
+
+    setTimeout(() => {
+      p.resizeCanvas(p.windowWidth, p.windowHeight);
+    }, 4000);
   };
 
 
   p.windowResized = function() {
     p.resizeCanvas(p.windowWidth, p.windowHeight);
+  //  console.log("window",p.windowWidth,p.windowWidth);
     onresize();
   };
 
@@ -26,7 +35,7 @@ const sketch = function (p) {
   }
 
   function createCubes() {
-    const cantidad = p.windowWidth / 150;
+    const cantidad = tamanin / 150;
     cubes = [];
     // imgCube = loadImage("assets/identidad/2017-1/sketches/index/cube_fondo.gif");  // Load the image
 
@@ -93,7 +102,7 @@ function Cube(p) {
   };
 
   this.reset = function () {
-    this.imgCube = p.loadImage('assets/identidad/2017-2/sketches/index/cube.png');  // Load the image
+   // this.imgCube = p.loadImage('assets/identidad/2017-2/sketches/index/cube.png');  // Load the image
     this.tam = 4 + Math.random() * 10;
     //  this.imgCube.resize(this.tam, this.tam);
     this.acel = p.createVector(0, -Math.random()); // single bar width
