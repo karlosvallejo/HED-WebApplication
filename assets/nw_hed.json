@@ -1,0 +1,313 @@
+{
+  "2017-2": {
+    "ponentes": {
+      "es": [
+        {
+          "nombre": "Raven Keller",
+          "informacion  ": "lorem ipsum en español.",
+          "pais": "Brooklyn",
+          "ciudad": "New York",
+          "src_image": "",
+          "cargo": "UX/Product reseacher, VICE designer",
+          "redes": {
+            "behance": "https://www.behance.net/ravenkeller",
+            "facebook": "",
+            "linkedIn": "https://www.linkedin.com/in/ravenkeller",
+            "twitter": "https://twitter.com/ravejk",
+            "pagina_personal": "http://ravenkeller.com/"
+          }
+        }
+      ],
+      "en": [
+        {
+          "nombre": "Raven Keller",
+          "informacion  ": "lorem ipsum en español.",
+          "pais": "Brooklyn",
+          "ciudad": "New York",
+          "src_image": "",
+          "cargo": "UX/Product reseacher, VICE designer",
+          "redes": {
+            "behance": "https://www.behance.net/ravenkeller",
+            "facebook": "",
+            "linkedIn": "https://www.linkedin.com/in/ravenkeller",
+            "twitter": "https://twitter.com/ravejk",
+            "pagina_personal": "http://ravenkeller.com/"
+          }
+        }
+      ]
+    },
+    "agenda": {
+      "es": [
+        {
+          "dia_semana": "jueves",
+          "fecha": "02.11.2017",
+          "actividades": {
+            "0": [
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "1": [
+              {
+                "nombre": "PEDRO GOMES",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "2": [
+              {
+                "nombre": "PEDRO GOMES",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ]
+          }
+        },
+        {
+          "dia_semana": "VIERNES",
+          "fecha": "03.11.2017",
+          "actividades": {
+            "0": [
+              {
+                "nombre": "inscripciones VIERNES",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "1": [
+              {
+                "nombre": "DIA DOS",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "10:00",
+                "hora_final": "11:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "2": [
+              {
+                "nombre": "PEDRO GOMES",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ]
+          }
+        }
+      ],
+      "en": [
+        {
+          "dia_semana": "jueves",
+          "fecha": "02.11.2017",
+          "actividades": {
+            "0": [
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "1": [
+              {
+                "nombre": "PEDRO GOMES",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "2": [
+              {
+                "nombre": "PEDRO GOMES",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ]
+          }
+        },
+        {
+          "dia_semana": "VIERNES",
+          "fecha": "03.11.2017",
+          "actividades": {
+            "0": [
+              {
+                "nombre": "inscripciones VIERNES",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "1": [
+              {
+                "nombre": "DIA DOS",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "10:00",
+                "hora_final": "11:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ],
+            "2": [
+              {
+                "nombre": "PEDRO GOMES",
+                "hora_inicio": "08:00",
+                "hora_final": "09:00",
+                "subtitulo": "Will Design Destroy The World?",
+                "descripcion": "In an era where technology innovation es faster than ever, what is the role design should take to shape our future?",
+                "idioma": ""
+              },
+              {
+                "nombre": "inscripciones",
+                "hora_inicio": "07:00",
+                "hora_final": "08:00",
+                "subtitulo": "",
+                "descripcion": "",
+                "idioma": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "general_info": {
+    "eventos_acumulados": [
+      "2017-2",
+      "2018-1",
+      "2018-2",
+      "2018-3"
+    ],
+    "cuentas_hed": {
+      "youtube": "www.youtube.com/hed",
+      "facebook": "www.facebook.com/hoyesdiseno",
+      "instagram": "www.instagram.com/hoyesdiseno"
+    }
+  },
+  "hed_identidad": {
+    "es": {
+      "navbar": {
+        "ponentes": "PONENTES",
+        "agenda": "AGENDA",
+        "galeria": "GALERÍA",
+        "evento": "EL EVENTO",
+        "pat  rocinadores": "PATROCINADORES",
+        "experiencia": "EXPERIENCIA"
+      },
+      "el_evento": {
+        "que": "texto de que",
+        "quien": "texto de quien ",
+        "donde": "texto de donde",
+        "cuando": "texto de cuando",
+        "contacto": {
+          "info": "información de contacto",
+          "telefono": "información de contacto",
+          "direccion": "información de contacto",
+          "email": "hed@hoyesdiseño.com"
+        }
+      }
+    },
+    "en": {
+      "navbar": {
+        "ponentes": "SPEAKERS",
+        "agenda": "SCHEDULE",
+        "galeria": "GALERY",
+        "evento": "THE EVENT",
+        "patrocinadores": "SPONSORS",
+        "experiencia": "EXPERIENCE"
+      },
+      "el_evento": {
+        "que": "texto de que en ingles",
+        "quien": "texto de quien en ingles",
+        "donde": "texto de donde en ingles",
+        "cuando": "texto de cuando en ingles",
+        "contacto": {
+          "info": "información de contacto  en ingles",
+          "telefono": "información de contacto en ingles",
+          "direccion": "información de contacto en ingles",
+          "email": "hed@hoyesdiseño.com en ingles"
+        }
+      }
+    }
+  }
+}
