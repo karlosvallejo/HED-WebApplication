@@ -18,7 +18,6 @@ const sketch = function (p) {
   //  canvas.parent('sketch-main');
  //   canvas.style('z-index', '-1');
     canvas.position(0, 0);
-    tamanin = p.displayWidth;
     p.background(14, 6, 51);
     createCubes();
   };
@@ -26,6 +25,8 @@ const sketch = function (p) {
 
   p.windowResized = function() {
     p.resizeCanvas(p.windowWidth, p.windowHeight);
+    tamanoooW = p.windowWidth;
+    tamanoooH = p.windowHeight;
   //  console.log("window",p.windowWidth,p.windowWidth);
     onresize();
   };
@@ -37,7 +38,7 @@ const sketch = function (p) {
   }
 
   function createCubes() {
-    const cantidad = tamanin / 150;
+    const cantidad = tamanoooW / 150;
     // imgCube = loadImage("assets/identidad/2017-1/sketches/index/cube_fondo.gif");  // Load the image
     for (let i = 0; i < cantidad; i++) {
       cubes.push(new Cube(cubinoImg));
@@ -75,9 +76,9 @@ const sketch = function (p) {
 
 
     this.limites = function () {
-      if (this.pos.y < -this.tam) {
-        this.pos.y = p.windowHeight + this.tam;
-        this.pos.x = Math.random() * p.windowWidth;
+      if (this.pos.y < -50) {
+        this.pos.y = tamanoooH + this.tam;
+        this.pos.x = Math.random() * tamanoooW;
         this.reset();
       }
     };

@@ -9,9 +9,8 @@ import {GaleriaComponent} from './galeria/galeria.component';
 
 
 const appRoutes: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'full' },
-    {path: 'home', component: HomeComponent, data: { state: 'home' }},
-    {path: 'ponentes', component: PonentesComponent, data: { state: 'ponentes' }},
+    {path: '', component: HomeComponent, pathMatch: 'full',  data: { state: 'home' }},
+    {path: 'ponentes', component: PonentesComponent, pathMatch: 'full', data: { state: 'ponentes' }},
     {path: 'agenda', component: AgendaComponent, data: { state: 'agenda' }},
     {path: 'about', component: AboutComponent, data: { state: 'about' }},
     {path: 'galeria', component: GaleriaComponent, data: { state: 'galeria' }}

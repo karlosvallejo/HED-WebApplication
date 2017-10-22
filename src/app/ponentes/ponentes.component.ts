@@ -39,6 +39,7 @@ export class PonentesComponent implements OnInit, OnDestroy {
   cargo: string;
   hrefWeb: string;
   urlFoto: string;
+  imgposition: string;
 //  identidadData: AngularFireObject<any[]>;
   desvanecer = 'nodesvanecer';
   datos: string[]= [];
@@ -103,6 +104,11 @@ export class PonentesComponent implements OnInit, OnDestroy {
       this.hrefWeb = this.ponentesData[0].redes.paginaPersonalAcortada;
       this.urlWeb = this.ponentesData[0].redes.pagina_personal;
       this.urlFoto = this.ponentesData[0].src_image;
+      if (this.ponentesData[0].imagePosition) {
+        this.imgposition = this.ponentesData[0].imagePosition;
+      } else {
+        this.imgposition = 'top';
+      }
     });
 
 
@@ -118,7 +124,7 @@ export class PonentesComponent implements OnInit, OnDestroy {
 
   public asignarInfo(infotito: string, nombri: string, slogitan: string, websito: string,
                      behancito: string, feisuri: string, palomaNoOp: string, linkin: string, cargin: string,
-                     hrefiso: string, urlfotin: string) {
+                     hrefiso: string, urlfotin: string, position: string) {
     this.datos.push(infotito);
     this.datos.push(nombri);
     this.datos.push(slogitan);
@@ -130,6 +136,7 @@ export class PonentesComponent implements OnInit, OnDestroy {
     this.datos.push(cargin);
     this.datos.push(hrefiso);
     this.datos.push(urlfotin);
+    this.datos.push(position);
     this.desvanecer = 'desvanecer';
 
   }
@@ -149,6 +156,11 @@ export class PonentesComponent implements OnInit, OnDestroy {
       this.cargo = this.datos[8];
       this.hrefWeb = this.datos[9];
       this.urlFoto = this.datos[10];
+      if (this.datos[11]) {
+        this.imgposition = this.datos[11];
+      } else {
+        this.imgposition = 'top';
+      }
       this.desvanecer = 'nodesvanecer';
       this.datos = [];
     }
