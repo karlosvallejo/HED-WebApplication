@@ -24,7 +24,7 @@ export class BackgroundComponent implements OnInit, AfterViewInit, AfterContentI
   }
 
   ngAfterViewInit(): void {
-   console.log(this.containerSketch.nativeElement.offsetWidth, this.containerSketch.nativeElement.offsetHeight);
+ //  console.log(this.containerSketch.nativeElement.offsetWidth, this.containerSketch.nativeElement.offsetHeight);
     this.canvasito =  new p5(getSketck(this.containerSketch.nativeElement.offsetWidth, this.containerSketch.nativeElement.offsetHeight), this.containerSketch.nativeElement);
 
 

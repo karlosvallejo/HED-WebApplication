@@ -22,7 +22,7 @@ export class GaleriaComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.galeriaDataSus =  this.services.getGaleriaInfo().subscribe(data => {
       this.galeriaData = data;
-      console.log(this.galeriaData);
+     // console.log(this.galeriaData);
     });
 
     this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;

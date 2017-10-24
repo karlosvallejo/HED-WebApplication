@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/Subscription';
 
 
 @Injectable()
@@ -32,7 +33,7 @@ export class GeneralServices {
 
   initIdiomas(idioma: string): void {
     this.loadDB(idioma, this.evento_actual);
-    console.log('entro');
+   // console.log('entro');
   }
 
   loadDB(idioma: string, eventoActual: string) {

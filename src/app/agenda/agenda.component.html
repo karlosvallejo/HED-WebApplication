@@ -1,16 +1,16 @@
 <div id="containerAgenta">
-<div id="dias" #diaDiv *ngIf="agendaData">
-  <div class="diaGroup noResponsive" *ngFor="let dia of agendaData" (click)="cambiarDia(dia)" [ngClass]="{'diaActivo': diaSel == dia}">
-    <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.2">{{dia.dia_semana}}</h2>
-    <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">{{dia.fecha}}</p>
-  </div>
+  <div id="dias" #diaDiv *ngIf="agendaData">
+    <div class="diaGroup noResponsive" *ngFor="let dia of agendaData" (click)="cambiarDia(dia)" [ngClass]="{'diaActivo': diaSel == dia}">
+      <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="2.2">{{dia.dia_semana}}</h2>
+      <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="7">{{dia.fecha}}</p>
+    </div>
 
-  <div class="diaGroup responsive" *ngFor="let dia of agendaData" (click)="cambiarDia(dia)" [ngClass]="{'diaActivo': diaSel == dia}">
-    <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="0.94">{{dia.dia_semana}}</h2>
-    <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="3">{{dia.fecha}}</p>
-  </div>
+    <div class="diaGroup responsive" *ngFor="let dia of agendaData" (click)="cambiarDia(dia)" [ngClass]="{'diaActivo': diaSel == dia}">
+      <h2 [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="0.94">{{dia.dia_semana}}</h2>
+      <p [fittext] [activateOnResize]="true" [container]="diaDiv" [minFontSize]="5" [compression]="3">{{dia.fecha}}</p>
+    </div>
 
-</div>
+  </div>
 
 
 

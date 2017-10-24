@@ -45,7 +45,6 @@ export class AgendaComponent implements OnInit, OnDestroy {
     'de Overwatch', 'descripcion': 'No se permiten pussies', 'hora': '07:00_' +
     '08:00 AM', 'idioma': ''}];
     this.eventosJueves = [ primerEventoJueves, segundoEventoJueves];
-
     const primerEventoViernes = [{'titulo': 'Una conferencia', 'descripcion': 'hola soy una conferencia', 'hora': '10:00_' +
     '12:00 AM', 'idioma': 'Italiano'}, {'titulo': 'otra conferencia', 'descripcion': 'hola soy una conf, pero mas pro', 'hora': '10:00_' +
     '12:00 AM', 'idioma': 'Ingles mexicano'}];
@@ -53,15 +52,13 @@ export class AgendaComponent implements OnInit, OnDestroy {
     '2:00 AM', 'idioma': 'combo empanada'}];
     const tercerEventoViernes = [{'titulo': 'curso de paint con stemen', 'descripcion': 'enseñar a hacer momazos', 'hora': '04:00_' +
     '6:00 AM', 'idioma': 'cualquiera we'}];
-
     this.eventosViernes = [primerEventoViernes, segundoEventoViernes, tercerEventoViernes];
-
     this.display = this.eventosJueves;
     */
   }
 
   cambiarDia(dia: {actividades: any[], dia_semana: '', fecha: ''}): void {
-     this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
+    this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
     if (this.permitirCambio) {
       if (this.scroll.nativeElement.scrollLeft > 0) {
         jQuery(this.scroll.nativeElement).animate({
@@ -83,35 +80,33 @@ export class AgendaComponent implements OnInit, OnDestroy {
         }, 4000);
       }
 
-/*
-      switch (dia) {
-        case 'jueves':
-          this.display = this.eventosJueves;
-          this.permitirCambio = false;
-          setTimeout(() => {
-            this.permitirCambio = true;
-          }, 3000);
-          break;
-
-        case 'viernes':
-          this.display = this.eventosViernes;
-          this.permitirCambio = false;
-          setTimeout(() => {
-            this.permitirCambio = true;
-          }, 3000);
-          break;
-
-      }
-*/
- //     this.diaSel = dia;
+      /*
+            switch (dia) {
+              case 'jueves':
+                this.display = this.eventosJueves;
+                this.permitirCambio = false;
+                setTimeout(() => {
+                  this.permitirCambio = true;
+                }, 3000);
+                break;
+              case 'viernes':
+                this.display = this.eventosViernes;
+                this.permitirCambio = false;
+                setTimeout(() => {
+                  this.permitirCambio = true;
+                }, 3000);
+                break;
+            }
+      */
+      //     this.diaSel = dia;
     }
   }
 
 
   moverScroll(direccion: string) {
     this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
-    console.log(this.diferenceMaxScroll);
-    console.log(this.scroll.nativeElement.scrollLeft);
+ //   console.log(this.diferenceMaxScroll);
+ //   console.log(this.scroll.nativeElement.scrollLeft);
     switch (direccion) {
       case 'derecha':
         if ((this.scroll.nativeElement.clientWidth * 0.8) > this.diferenceMaxScroll) {
@@ -144,7 +139,7 @@ export class AgendaComponent implements OnInit, OnDestroy {
     this.agendaDataSus =  this.services.getAgendaInfo().subscribe(data => {
       this.agendaData = data;
       this.diaSel = this.agendaData[0];
-      console.log(this.diaSel);
+    //  console.log(this.diaSel);
       this.actividades = this.diaSel.actividades;
     });
   }

@@ -13,8 +13,8 @@ const sketch = function (p) {
   p.setup = function () {
 
     canvas = p.createCanvas(tamanoooW, tamanoooH,[p.P2D]);
-    console.log("window",p.windowWidth,p.windowHeight);
-    console.log("display",p.displayWidth, p.displayHeight);
+  //  console.log("window",p.windowWidth,p.windowHeight);
+  //  console.log("display",p.displayWidth, p.displayHeight);
   //  canvas.parent('sketch-main');
  //   canvas.style('z-index', '-1');
     canvas.position(0, 0);
