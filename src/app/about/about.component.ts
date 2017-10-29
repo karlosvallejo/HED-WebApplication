@@ -27,7 +27,7 @@ seletedInfo: string;
 urlFoto: string;
 aboutDataSus: Subscription;
 aboutData: any;
-
+estadoScroll: number;
 
   constructor(private services: GeneralServices) {
     this.selectedSection = 'QUE';
@@ -103,6 +103,9 @@ aboutData: any;
         this.seletedInfo = '';
         this.subtitulo = '';
         break;
+      case 'PATROCINADORES':
+        this.selectedSection = 'PATROCINADORES';
+        break;
     }
   }
 
@@ -111,44 +114,67 @@ aboutData: any;
     return this.maxScrollLeft;
   }
 
-  public onNextSearchPosition(objetivo: number): void {
+  public calcularFaltante(): number {
+    console.log('ScrollWidth', this.containerSelector.nativeElement.scrollWidth);
+    console.log('ScrollLeft', this.containerSelector.nativeElement.scrollLeft);
+    console.log('ScrollLeft+ClientWidth', this.containerSelector.nativeElement.scrollLeft + this.containerSelector.nativeElement.clientWidth);
+    const temporal = this.containerSelector.nativeElement.scrollWidth - (this.containerSelector.nativeElement.scrollLeft + this.containerSelector.nativeElement.clientWidth);
+    console.log('LoQueFalt', temporal);
+    return temporal;
+}
 
-    if (this.containerSelector.nativeElement.scrollLeft < objetivo) {
-      jQuery(this.containerSelector.nativeElement).animate({
-        scrollLeft: '+=' + objetivo
-      }, 1500, 'easeInOutCubic');
-    } else if (this.containerSelector.nativeElement.scrollLeft > objetivo) {
-      jQuery(this.containerSelector.nativeElement).animate({
-        scrollLeft: '-=' + this.containerSelector.nativeElement.scrollLeft
-      }, 1500, 'easeInOutCubic');
+public getScrollLeft(): number{
+    return this.containerSelector.nativeElement.scrollLeft;
+}
+
+  public onNextSearchPosition(objetivo: number, dir: string, noMove: boolean): void {
+
+    if (this.containerSelector.nativeElement.scrollLeft === 0) {
+      this.estadoScroll = 0;
+    }
+    if (this.containerSelector.nativeElement.scrollLeft > 0) {
+      this.estadoScroll = 1;
+    }
+    if (this.calcularFaltante() === 0) {
+      this.estadoScroll = 2;
     }
 
-    /*
-    this.maxScrollLeft = this.containerSelector.nativeElement.scrollWidth - this.containerSelector.nativeElement.clientWidth;
-    if (this.containerSelector.nativeElement.scrollLeft < objetivo) {
-      let i = this.containerSelector.nativeElement.scrollLeft;
-      const init = setInterval(() => {
-        this.containerSelector.nativeElement.scrollTo(i, 0);
-        i += 20;
-        if (i >= this.maxScrollLeft) {
-          clearInterval(init);
+    switch (this.estadoScroll) {
+      case 0:
+        this.mover(objetivo, dir);
+        break;
+      case 1:
+        if (!noMove) {
+          this.mover(objetivo, dir);
         }
-      }, 15);
-    } else if (this.containerSelector.nativeElement.scrollLeft > objetivo) {
-      let i = this.containerSelector.nativeElement.scrollLeft;
-      const init = setInterval(() => {
-        this.containerSelector.nativeElement.scrollTo(i, 0);
-        i -= 20;
-        if (i <= objetivo) {
-          clearInterval(init);
-        }
-      }, 15);
-    }
-    console.log(this.containerSelector.nativeElement.scrollLeft + ' Scroll total: ' + this.maxScrollLeft);
-  //  this.containerSelector.nativeElement.scrollLeft = 350;
 
-   // this.containerSelector.nativeElement.scrollTo(350, 0);
-   */
+        break;
+      case 2:
+        if (noMove) {
+          this.mover(this.calcularFinalScroll() * 0.35, 'izquierda');
+        }
+
+        break;
+    }
+
+
+  }
+
+  private mover(objetivo: number, dir: string): void {
+    switch (dir) {
+      case 'izquierda':
+        jQuery(this.containerSelector.nativeElement).animate({
+          scrollLeft: '-=' + objetivo
+        }, 1500, 'easeInOutCubic');
+
+        break;
+
+      case 'derecha':
+        jQuery(this.containerSelector.nativeElement).animate({
+          scrollLeft: '+=' + objetivo
+        }, 1500, 'easeInOutCubic');
+        break;
+    }
   }
 
 

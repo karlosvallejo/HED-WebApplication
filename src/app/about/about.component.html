@@ -1,10 +1,12 @@
 <div id="backgroundAbout">
   <div id="selectorCategoriasAbout"  #containerSelector>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUE'}" (click)="asignarInfo('QUE')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUÉ?</h2>
-    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUIEN'}" (mouseenter)="onNextSearchPosition(0)" (click)="asignarInfo('QUIEN')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUIÉN?</h2>
-    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'DONDE'}" (mouseenter)="onNextSearchPosition(0)" (click)="asignarInfo('DONDE')"  [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DÓNDE?</h2>
-    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CUANDO'}" (mouseenter)="onNextSearchPosition(calcularFinalScroll())" (click)="asignarInfo('CUANDO')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CÚANDO?</h2>
+    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUIEN'}" (click)="asignarInfo('QUIEN')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUIÉN?</h2>
+    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'DONDE'}" (mouseenter)="onNextSearchPosition(getScrollLeft(), 'izquierda', false)" (click)="asignarInfo('DONDE')"  [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DÓNDE?</h2>
+    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CUANDO'}" (mouseenter)="onNextSearchPosition(calcularFinalScroll()/1.5, 'derecha', true)"  (click)="asignarInfo('CUANDO')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CÚANDO?</h2>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CONTACTO'}" (click)="asignarInfo('CONTACTO')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CONTACTO</h2>
+    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'PATROCINADORES'}" (mouseenter)="onNextSearchPosition(calcularFaltante(), 'derecha', false)" (click)="asignarInfo('PATROCINADORES')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">PATROCINIOS</h2>
+
     </div>
 
 
