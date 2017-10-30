@@ -3,9 +3,9 @@
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUE'}" (click)="asignarInfo('QUE')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUÉ?</h2>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'QUIEN'}" (click)="asignarInfo('QUIEN')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">QUIÉN?</h2>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'DONDE'}" (mouseenter)="onNextSearchPosition(getScrollLeft(), 'izquierda', false)" (click)="asignarInfo('DONDE')"  [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">DÓNDE?</h2>
-    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CUANDO'}" (mouseenter)="onNextSearchPosition(calcularFinalScroll()/1.5, 'derecha', true)"  (click)="asignarInfo('CUANDO')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CÚANDO?</h2>
+    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CUANDO'}" (mouseenter)="onNextSearchPosition((calcularFaltante()/1.25), 'derecha', true)"  (click)="asignarInfo('CUANDO')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CÚANDO?</h2>
     <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'CONTACTO'}" (click)="asignarInfo('CONTACTO')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">CONTACTO</h2>
-    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'PATROCINADORES'}" (mouseenter)="onNextSearchPosition(calcularFaltante(), 'derecha', false)" (click)="asignarInfo('PATROCINADORES')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">PATROCINIOS</h2>
+    <h2 class="categorias" [ngClass]="{'seletedCategoria': selectedSection == 'PATROCINADORES'}" (mouseenter)="onNextSearchPosition(calcularFaltante(), 'derecha', false)" (click)="asignarInfo('PATROCINADORES')" [fittext] [activateOnResize]="true" [container]="containerSelector" [minFontSize]="5" [compression]="1.8">APOYAN</h2>
 
     </div>
 
@@ -28,6 +28,26 @@
   </div>
 
   <div *ngIf="selectedSection == 'QUE' || selectedSection == 'QUIEN'" id="imagenQUE" [style.background-image]="'url(' +urlFoto+ ')'"></div>
+
+  <div  *ngIf="selectedSection == 'PATROCINADORES'" id="divPatrocinios" #containerPatroci>
+    <h2 [fittext] [activateOnResize]="true" [container]="containerPatroci" [minFontSize]="5" [compression]="4"  id="tituloPatrocinio" class="noResponsive">
+      {{patrocinadorTitulo}}
+    </h2>
+    <h5 id="descripcionPatrocinio" class="noResponsive" [fittext] [activateOnResize]="true" [container]="containerPatroci" [minFontSize]="5" [compression]="8">
+      {{patrocinadorDescripcion}}
+    </h5>
+
+    <h2 [fittext] [activateOnResize]="true" [container]="containerPatroci" [minFontSize]="5" [compression]="2"  id="tituloPatrocinio" class="responsive">
+      {{patrocinadorTitulo}}
+    </h2>
+    <h5 id="descripcionPatrocinio" class="responsive" [fittext] [activateOnResize]="true" [container]="containerPatroci" [minFontSize]="5" [compression]="4">
+      {{patrocinadorDescripcion}}
+    </h5>
+
+       <div id="containerPatrocinios" >
+          <div class="cuadroPatrocinio" *ngFor="let cuadro of patrocinadoresInfo" [style.background-image]="'url(' +cuadro.imgSrc+ ')'" [ngClass]="{'seletedPatrocinador': patrocinadorTitulo === cuadro.titulo}" (mouseenter)="asignarInfoPatrocinio(cuadro); setNoCambiar(true)" (mouseleave)="setNoCambiar(false)"><a href="{{cuadro.link}}" target="_blank"><div class="cover"><h3 [fittext] [activateOnResize]="true" [container]="containerPatroci" [minFontSize]="5" [compression]="8">{{cuadro.titulo}}</h3></div></a></div>
+       </div>
+  </div>
 
 
 </div>
