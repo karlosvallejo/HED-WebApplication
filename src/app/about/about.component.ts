@@ -222,11 +222,7 @@ public getScrollLeft(): number {
   public onNextSearchPosition(objetivo: number, dir: string, noMove: boolean): void {
 
     if (this.puedeMover) {
-      this.puedeMover = false;
 
-      setTimeout(() => {
-        this.puedeMover = true;
-      }, 3000);
 
       if (this.containerSelector.nativeElement.scrollLeft === 0) {
         this.estadoScroll = 0;
@@ -260,6 +256,11 @@ public getScrollLeft(): number {
   }
 
   private mover(objetivo: number, dir: string): void {
+    this.puedeMover = false;
+
+    setTimeout(() => {
+      this.puedeMover = true;
+    }, 2000);
     switch (dir) {
       case 'izquierda':
         jQuery(this.containerSelector.nativeElement).animate({

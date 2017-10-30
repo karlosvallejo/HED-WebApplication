@@ -249,24 +249,26 @@ background: rgba(0,0,0,0.1);
 
   #containerSelectorYInfo {
     width: 100%;
-    height: 77%;
+    height: 80%;
     left: 0;
     top: 10%;
     background-color: rgba(0,0,0,0.0);
+    overflow: auto;
   }
 
   .containerSelectorPonentes {
-    background-color: rgba(255,255,255,0.0);
+    background-color: rgba(0,0,0,0.2);
     width: 100%;
-    height: 22%;
-    top: 78%;
+    height: 28%;
+    top: 72%;
+    overflow: auto;
   }
 
   .containerInfoPonente {
 
     left: 6.25%;
     width: 87.5%;
-    height: 75%;
+    height: 71%;
     top: 0;
   }
 
@@ -281,6 +283,8 @@ background: rgba(0,0,0,0.1);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: auto;
+    background-color: rgba(12,50,0,0.0);
   }
 
   .containerSelectorPonentes ul li {
@@ -290,6 +294,7 @@ background: rgba(0,0,0,0.1);
     background-color: rgba(0,0,0,0.3);
     border-radius: 10px;
   }
+
 
   #redesSocialesIcons {
 
