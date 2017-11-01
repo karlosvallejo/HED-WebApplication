@@ -11,18 +11,22 @@ export class GeneralServices {
   evento_actual: string;
 
 
-  data_identidadRef: AngularFireObject<any[]>;
-  data_identidad: Observable<any[]>;
-  general_infoRef: AngularFireObject<any[]>;
-  general_info: Observable<any[]>;
-  ponentesDataRef: AngularFireObject<any[]>;
-  ponentesData: Observable<any[]>;
-  agendaDataRef: AngularFireObject<any[]>;
-  agendaData: Observable<any[]>;
-  galeriaDataRef: AngularFireObject<any[]>;
-  galeriaData: Observable<any[]>;
-  aboutDataRef: AngularFireObject<any[]>;
-  aboutData: Observable<any[]>;
+ private data_identidadRef: AngularFireObject<any[]>;
+ private  data_identidad: Observable<any[]>;
+ private general_infoRef: AngularFireObject<any[]>;
+ private general_info: Observable<any[]>;
+ private ponentesDataRef: AngularFireObject<any[]>;
+ private ponentesData: Observable<any[]>;
+ private ponentesDataSus: Subscription;
+ private ponentesDataInfo: any[];
+ private agendaDataRef: AngularFireObject<any[]>;
+ private agendaData: Observable<any[]>;
+ private agendaDataSus: Subscription;
+ private agendaDataInfo: any[];
+ private galeriaDataRef: AngularFireObject<any[]>;
+ private galeriaData: Observable<any[]>;
+ private aboutDataRef: AngularFireObject<any[]>;
+ private aboutData: Observable<any[]>;
 
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
@@ -48,9 +52,15 @@ export class GeneralServices {
     // cargar ponentes
     this.ponentesDataRef = this.db.object(epoca + '/ponentes/' + idioma);
     this.ponentesData = this.ponentesDataRef.valueChanges();
+    this.ponentesDataSus =  this.ponentesData.subscribe(data => {
+      this.ponentesDataInfo = data;
+    });
     // cargar agenda
     this.agendaDataRef = this.db.object(epoca + '/agenda/' + idioma);
     this.agendaData = this.agendaDataRef.valueChanges();
+    this.agendaDataSus =  this.agendaData.subscribe(data => {
+      this.agendaDataInfo = data;
+    });
     // cargar Galeria
     this.galeriaDataRef = this.db.object(epoca + '/galeria/' + idioma);
     this.galeriaData = this.galeriaDataRef.valueChanges();
@@ -70,9 +80,15 @@ export class GeneralServices {
  getPonentesInfo(): Observable<any[]> {
     return this.ponentesData;
  }
+ getPonentesInfoFinal(): any[] {
+    return this.ponentesDataInfo;
+ }
 
  getAgendaInfo(): Observable<any[]> {
     return this.agendaData;
+ }
+ getAgendaInfoFinal(): any[] {
+    return this.agendaDataInfo;
  }
 
  getGaleriaInfo(): Observable<any[]> {

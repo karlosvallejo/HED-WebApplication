@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostBinding, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostBinding, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {GeneralServices} from '../services/services.service';
 import {query, trigger, transition, group, sequence, animateChild, style, animate, stagger} from '@angular/animations';
 import {Subscription} from 'rxjs/Subscription';
@@ -27,7 +27,8 @@ const animarHijos = trigger('cuadritosTransition', [
   styleUrls: ['./agenda.component.css'],
   animations: [animarHijos]
 })
-export class AgendaComponent implements OnInit, OnDestroy {
+export class AgendaComponent implements OnInit, OnDestroy, AfterViewInit {
+
   @ViewChild('containerScrollAgenda', {read: ElementRef}) scroll: ElementRef;
   diferenceMaxScroll: number;
   diaSel: {actividades: any[], dia_semana: '', fecha: ''};
@@ -136,16 +137,28 @@ export class AgendaComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.agendaDataSus =  this.services.getAgendaInfo().subscribe(data => {
-      this.agendaData = data;
+    this.agendaData = this.services.getAgendaInfoFinal();
+    if (this.agendaData) {
       this.diaSel = this.agendaData[0];
-    //  console.log(this.diaSel);
       this.actividades = this.diaSel.actividades;
-    });
+    }
+  }
+
+  ngAfterViewInit(): void {
+    if (!this.agendaData) {
+      this.agendaDataSus =  this.services.getAgendaInfo().subscribe(data => {
+        this.agendaData = data;
+        this.diaSel = this.agendaData[0];
+        //  console.log(this.diaSel);
+        this.actividades = this.diaSel.actividades;
+      });
+    }
   }
 
   ngOnDestroy(): void {
-    this.agendaDataSus.unsubscribe();
+    if (this.agendaDataSus) {
+      this.agendaDataSus.unsubscribe();
+    }
   }
 
 }

@@ -5,8 +5,10 @@
 </div>
 
 <div id="divPatrociniosHome">
+  <!--
   <h3 class="noResponsive"  #divSeguidor [fittext] [activateOnResize]="true" [container]="divSeguidor" [minFontSize]="5" [compression]="0.6">Patrocinan</h3>
   <h3 class="responsive"  #divSeguidor [fittext] [activateOnResize]="true" [container]="divSeguidor" [minFontSize]="5" [compression]="2">Patrocinan</h3>
+  -->
   <div class="flexLogosPatrocinadores"  [routerLink]="['/about', {'seccion': 'patrocinadores'}]">
      <div class="cuadroPatrocinio" [style.background-image]="'url(' +cuadro.imgSrc+ ')'" *ngFor="let cuadro of patrocinadoresInfo"></div>
   </div>

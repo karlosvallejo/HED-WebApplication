@@ -22,7 +22,7 @@ import {Subscription} from 'rxjs/Subscription';
   ]
 
 })
-export class PonentesComponent implements OnInit, OnDestroy {
+export class PonentesComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
   ponentesData: {};
@@ -91,32 +91,60 @@ export class PonentesComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-      this.ponentesDataSus =  this.services.getPonentesInfo().subscribe(data => {
-      this.ponentesData = data;
-      this.nombre = this.ponentesData[0].nombre;
-      this.subfrase = this.ponentesData[0].pais + ' / ' + this.ponentesData[0].ciudad;
-      this.info = this.ponentesData[0].informacion;
-      this.urlPortafolio = this.ponentesData[0].redes.behance;
-      this.urlfacebook = this.ponentesData[0].redes.facebook;
-      this.urlPaloma = this.ponentesData[0].redes.twitter;
-      this.urlLinkedIn = this.ponentesData[0].redes.linkedIn;
-      this.cargo = this.ponentesData[0].cargo;
-      this.hrefWeb = this.ponentesData[0].redes.paginaPersonalAcortada;
-      this.urlWeb = this.ponentesData[0].redes.pagina_personal;
-      this.urlFoto = this.ponentesData[0].src_image;
-      if (this.ponentesData[0].imagePosition) {
-        this.imgposition = this.ponentesData[0].imagePosition;
-      } else {
-        this.imgposition = 'top';
+      this.ponentesData = this.services.getPonentesInfoFinal();
+      if (this.ponentesData) {
+        this.nombre = this.ponentesData[0].nombre;
+        this.subfrase = this.ponentesData[0].pais + ' / ' + this.ponentesData[0].ciudad;
+        this.info = this.ponentesData[0].informacion;
+        this.urlPortafolio = this.ponentesData[0].redes.behance;
+        this.urlfacebook = this.ponentesData[0].redes.facebook;
+        this.urlPaloma = this.ponentesData[0].redes.twitter;
+        this.urlLinkedIn = this.ponentesData[0].redes.linkedIn;
+        this.cargo = this.ponentesData[0].cargo;
+        this.hrefWeb = this.ponentesData[0].redes.paginaPersonalAcortada;
+        this.urlWeb = this.ponentesData[0].redes.pagina_personal;
+        this.urlFoto = this.ponentesData[0].src_image;
+        if (this.ponentesData[0].imagePosition) {
+          this.imgposition = this.ponentesData[0].imagePosition;
+        } else {
+          this.imgposition = 'top';
+        }
       }
-    });
+
 
 
 
   }
 
+  ngAfterViewInit(): void {
+    if (!this.ponentesData) {
+      this.ponentesDataSus =  this.services.getPonentesInfo().subscribe(data => {
+        this.ponentesData = data;
+        this.nombre = this.ponentesData[0].nombre;
+        this.subfrase = this.ponentesData[0].pais + ' / ' + this.ponentesData[0].ciudad;
+        this.info = this.ponentesData[0].informacion;
+        this.urlPortafolio = this.ponentesData[0].redes.behance;
+        this.urlfacebook = this.ponentesData[0].redes.facebook;
+        this.urlPaloma = this.ponentesData[0].redes.twitter;
+        this.urlLinkedIn = this.ponentesData[0].redes.linkedIn;
+        this.cargo = this.ponentesData[0].cargo;
+        this.hrefWeb = this.ponentesData[0].redes.paginaPersonalAcortada;
+        this.urlWeb = this.ponentesData[0].redes.pagina_personal;
+        this.urlFoto = this.ponentesData[0].src_image;
+        if (this.ponentesData[0].imagePosition) {
+          this.imgposition = this.ponentesData[0].imagePosition;
+        } else {
+          this.imgposition = 'top';
+        }
+      });
+    }
+
+  }
+
   ngOnDestroy(): void {
-    this.ponentesDataSus.unsubscribe();
+    if (this.ponentesDataSus) {
+      this.ponentesDataSus.unsubscribe();
+    }
   }
 
 
