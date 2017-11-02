@@ -10,7 +10,8 @@ declare const jQuery: any;
   templateUrl: './galeria.component.html',
   styleUrls: ['./galeria.component.css']
 })
-export class GaleriaComponent implements OnInit, OnDestroy {
+export class GaleriaComponent implements OnInit, OnDestroy, AfterViewInit {
+
 
   @ViewChild('containerScrollGaleria', {read: ElementRef}) scroll: ElementRef;
   diferenceMaxScroll: number;
@@ -20,16 +21,26 @@ export class GaleriaComponent implements OnInit, OnDestroy {
   constructor(private services: GeneralServices) { }
 
   ngOnInit() {
-    this.galeriaDataSus =  this.services.getGaleriaInfo().subscribe(data => {
-      this.galeriaData = data;
-     // console.log(this.galeriaData);
-    });
+
+
+    this.galeriaData = this.services.getGaleriaInfoFinal();
 
     this.diferenceMaxScroll = this.scroll.nativeElement.scrollWidth - this.scroll.nativeElement.clientWidth;
   }
 
+  ngAfterViewInit(): void {
+    if (!this.galeriaData) {
+      this.galeriaDataSus =  this.services.getGaleriaInfo().subscribe(data => {
+        this.galeriaData = data;
+        // console.log(this.galeriaData);
+      });
+    }
+  }
+
   ngOnDestroy(): void {
-    this.galeriaDataSus.unsubscribe();
+    if (this.galeriaDataSus) {
+      this.galeriaDataSus.unsubscribe();
+    }
   }
 
 

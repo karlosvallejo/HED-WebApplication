@@ -5,6 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 
 
+
 @Injectable()
 export class GeneralServices {
   private idiomaActual: string;
@@ -25,6 +26,8 @@ export class GeneralServices {
  private agendaDataInfo: any[];
  private galeriaDataRef: AngularFireObject<any[]>;
  private galeriaData: Observable<any[]>;
+ private galeriaDataSus: Subscription;
+ private galeriaDataInfo: any[];
  private aboutDataRef: AngularFireObject<any[]>;
  private aboutData: Observable<any[]>;
 
@@ -64,6 +67,9 @@ export class GeneralServices {
     // cargar Galeria
     this.galeriaDataRef = this.db.object(epoca + '/galeria/' + idioma);
     this.galeriaData = this.galeriaDataRef.valueChanges();
+    this.galeriaDataSus = this.galeriaData.subscribe(data => {
+      this.galeriaDataInfo = data;
+    });
     // cargar About
     this.aboutDataRef = this.db.object(epoca + '/about/' + idioma);
     this.aboutData = this.aboutDataRef.valueChanges();
@@ -93,6 +99,9 @@ export class GeneralServices {
 
  getGaleriaInfo(): Observable<any[]> {
     return this.galeriaData;
+ }
+ getGaleriaInfoFinal(): any[]{
+    return this.galeriaDataInfo;
  }
 
  getAboutInfo(): Observable<any[]> {
