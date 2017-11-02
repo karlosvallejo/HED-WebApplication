@@ -100,7 +100,21 @@ this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
         'imgSrc': '/assets/identidad/2017-2/patrocinadores/karambolo.jpg', 'link': 'https://www.facebook.com/karambolohostal/'},
       {'titulo': 'Pettites', 'descripcion': 'Hoy es Diseño está encantado de contar con Pettites cómo patrocinador,' +
       ' ésta empresa caleña ofrece los mejores detalles para regalarle a esa persona especial o para celebrar un gran dìa',
-      'imgSrc': '/assets/identidad/2017-2/patrocinadores/petite.jpg', 'link': 'https://www.facebook.com/pettites/'}];
+      'imgSrc': '/assets/identidad/2017-2/patrocinadores/petite.jpg', 'link': 'https://www.facebook.com/pettites/'},
+      {'titulo': 'Ninus', 'descripcion': '¡Descubre nuevas realidades con Ninus Design & Technology!',
+        'imgSrc': '/assets/identidad/2017-2/patrocinadores/ninus.jpg', 'link': 'http://ninus.co/'},
+      {'titulo': 'Karens Pizza', 'descripcion': '¡Si buscas ingredientes frescos y naturales, Karens Pizza es el lugar!',
+      'imgSrc': '/assets/identidad/2017-2/patrocinadores/karens.jpg', 'link': 'https://www.facebook.com/KarensPizzaOficial/'},
+      {'titulo': 'Crehana', 'descripcion': 'Somos una comunidad creativa donde personas aprenden habilidades creativas en ' +
+      'cursos online enseñados por expertos.', 'imgSrc': '/assets/identidad/2017-2/patrocinadores/crehana.jpg',
+        'link': 'https://www.facebook.com/Crehanacom/'}, {'titulo': 'Hebreítas', 'descripcion': 'Deliciosos pasteles de ' +
+      'hojaldra, rellenos con ingredientes exquisitos ¡Un placer para tu paladar!',
+        'imgSrc': '/assets/identidad/2017-2/patrocinadores/hebreitas.jpg', 'link': 'https://www.facebook.com/hebreitas/'},
+      {'titulo': 'Tugó', 'descripcion': '¡Tugó tiene todo en muebles, accesorios para decorar el hogar y objetos para tu casa!',
+      'imgSrc': '/assets/identidad/2017-2/patrocinadores/tugo.jpg', 'link': 'http://www.tugo.co/'},
+      {'titulo': 'Los Hijos De Shirley', 'descripcion': '¡Imposible resistirse a algo tan delicioso! Para el mejor sabor, ' +
+      'Los Hijos De Shirley', 'imgSrc': '/assets/identidad/2017-2/patrocinadores/shirley.jpg',
+        'link': 'https://www.facebook.com/loshijosdeshirley'}];
 
     this.patrocinadorTitulo = this.patrocinadoresInfo[0].titulo;
 
@@ -209,8 +223,10 @@ this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
   public calcularFaltante(): number {
   //  console.log('ScrollWidth', this.containerSelector.nativeElement.scrollWidth);
   //  console.log('ScrollLeft', this.containerSelector.nativeElement.scrollLeft);
-  //  console.log('ScrollLeft+ClientWidth', this.containerSelector.nativeElement.scrollLeft + this.containerSelector.nativeElement.clientWidth);
-    const temporal = this.containerSelector.nativeElement.scrollWidth - (this.containerSelector.nativeElement.scrollLeft + this.containerSelector.nativeElement.clientWidth);
+  //  console.log('ScrollLeft+ClientWidth', this.containerSelector.nativeElement.scrollLeft + this.containerSelector.
+    // nativeElement.clientWidth);
+    const temporal = this.containerSelector.nativeElement.scrollWidth - (this.containerSelector.nativeElement.scrollLeft +
+      this.containerSelector.nativeElement.clientWidth);
   //  console.log('LoQueFalt', temporal);
     return temporal;
 }

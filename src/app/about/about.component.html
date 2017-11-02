@@ -45,7 +45,7 @@
     </h5>
 
        <div id="containerPatrocinios" >
-          <div class="cuadroPatrocinio" *ngFor="let cuadro of patrocinadoresInfo" [style.background-image]="'url(' +cuadro.imgSrc+ ')'" [ngClass]="{'seletedPatrocinador': patrocinadorTitulo === cuadro.titulo}" (mouseenter)="asignarInfoPatrocinio(cuadro); setNoCambiar(true)" (mouseleave)="setNoCambiar(false)"><a href="{{cuadro.link}}" target="_blank"><div class="cover"><h3 [fittext] [activateOnResize]="true" [container]="containerPatroci" [minFontSize]="5" [compression]="8">{{cuadro.titulo}}</h3></div></a></div>
+          <div class="cuadroPatrocinio" *ngFor="let cuadro of patrocinadoresInfo" [style.background-image]="'url(' +cuadro.imgSrc+ ')'" [ngClass]="{'seletedPatrocinador': patrocinadorTitulo === cuadro.titulo}" (mouseenter)="asignarInfoPatrocinio(cuadro); setNoCambiar(true)" (mouseleave)="setNoCambiar(false)"><a href="{{cuadro.link}}" target="_blank"><div class="cover"><h3 [fittext] [activateOnResize]="true" [container]="containerPatroci" [minFontSize]="5" [compression]="11">{{cuadro.titulo}}</h3></div></a></div>
        </div>
   </div>
 
