@@ -81,13 +81,13 @@
 
 .containerInfoPonente {
   position: absolute;
-
   left: 32%;
   width: 68%;
   height: 100%;
   color: white;
-   background-color: rgba(200,50,250,0.0);
+  background-color: rgba(200,50,250,0.0);
   overflow: auto;
+  text-align: justify;
 
 }
 

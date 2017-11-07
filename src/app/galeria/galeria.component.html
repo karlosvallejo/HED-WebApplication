@@ -1,5 +1,5 @@
 <div id="backgroundGaleria">
-  <div id="siguiente" (click)="moverScroll('derecha')"><div></div></div>
+  <div id="siguiente" (click)="moverScroll('derecha')" *ngIf="!comprobarFinal()"><div></div></div>
  <!-- <div  *ngIf="this.diferenceMaxScroll > this.scroll.nativeElement.scrollLeft" id="siguiente" (click)="moverScroll('derecha')"><div></div></div> -->
   <div *ngIf="this.scroll.nativeElement.scrollLeft > 0" id="atras" (click)="moverScroll('izquierda')"><div></div></div>
 
