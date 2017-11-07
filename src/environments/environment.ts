@@ -20,5 +20,5 @@ export const environment = {
     projectId: 'hoyesdisenoapp',
     storageBucket: 'hoyesdisenoapp.appspot.com',
     messagingSenderId: '731835721273'
-  },
+  }
 };

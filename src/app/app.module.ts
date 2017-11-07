@@ -40,7 +40,7 @@ import {environment} from '../environments/environment';
     BrowserModule,
     BrowserAnimationsModule,
     // AngularFire2 ----------------------------
-    AngularFireModule.initializeApp(environment.firebaseDev),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     // -------------------------------------------
