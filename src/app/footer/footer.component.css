@@ -48,6 +48,11 @@
   color: rgba(255,255,255,0.8);
 }
 
+.activeSelect {
+  border-top: white 3px solid;
+  color: rgba(255,255,255,1);
+}
+
 
 .epoca h4{
   position: relative;

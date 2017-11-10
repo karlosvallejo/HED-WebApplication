@@ -17,12 +17,12 @@
   </div>
   <div id="containerSelector" *ngIf="general_info_footer" #selectorContainer>
 
-    <div class="epoca noResponsive" [fittext] [activateOnResize]="true" [container]="footerContainer" [minFontSize]="5"
-         [compression]="12" *ngFor="let evento of general_info_footer.eventos_acumulados">
+    <div class="epoca noResponsive" [ngClass]="{'activeSelect': eventoActual == evento}" [fittext] [activateOnResize]="true" [container]="footerContainer" [minFontSize]="5"
+         [compression]="12" *ngFor="let evento of general_info_footer.eventos_acumulados" (click)="openUrl(evento)">
       <h4>{{evento}}</h4>
     </div>
 
-    <div class="epoca responsive" [fittext] [activateOnResize]="true" [container]="footerContainer" [minFontSize]="5"
+    <div class="epoca responsive" [ngClass]="{'activeSelect': eventoActual == evento}" (click)="openUrl(evento)" [fittext] [activateOnResize]="true" [container]="footerContainer" [minFontSize]="5"
          [compression]="3" *ngFor="let evento of general_info_footer.eventos_acumulados">
       <h4>{{evento}}</h4>
     </div>
