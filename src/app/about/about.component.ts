@@ -60,8 +60,9 @@ this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
 
     this.puedeMover = true;
 
+    /*
     this.patrocinadoresInfo = [{'titulo': 'Centronet', 'descripcion': 'Centro Net SAS Es una empresa dedicada a la ' +
-    'cartelería digital, Tótem interactivos, Video Wall, pantallas táctiles y todo lo relacionado con digital.',
+    'cartelería digital, Tótem interactivos, Video Wall, pantallas táctiles y todo lo relacionado con lo digital.',
       'imgSrc': '/assets/identidad/2017-2/patrocinadores/centronet.jpg', 'link': 'http://www.centronet.com.co/'} , {'titulo':
      'Belkot', 'descripcion': 'Intenta algo nuevo cada día junto a Belkot', 'imgSrc': '/assets/identidad/2017-2/pa' +
     'trocinadores/belkot.jpg', 'link':
@@ -116,9 +117,12 @@ this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
       'Los Hijos De Shirley', 'imgSrc': '/assets/identidad/2017-2/patrocinadores/shirley.jpg',
         'link': 'https://www.facebook.com/loshijosdeshirley'}];
 
-    this.patrocinadorTitulo = this.patrocinadoresInfo[0].titulo;
+        */
 
-    this.patrocinadorDescripcion = this.patrocinadoresInfo[0].descripcion;
+
+   // this.patrocinadorTitulo = this.patrocinadoresInfo[0].titulo;
+
+//    this.patrocinadorDescripcion = this.patrocinadoresInfo[0].descripcion;
 
     this.indexActual = 0;
 
@@ -132,19 +136,40 @@ this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
     } else {
       this.selectedSection = 'QUE';
     }
-    this.aboutDataSus =  this.services.getAboutInfo().subscribe(data => {
-      this.aboutData = data;
+
+
+    this.aboutData = this.services.getAboutInfoFinal();
+    if (this.aboutData) {
       this.infoQUE = this.aboutData.que;
       this.infoQUIEN = this.aboutData.quien;
       this.cuando = this.aboutData.cuando;
       this.telefono = this.aboutData.telefono;
       this.seletedInfo = this.infoQUE;
       this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
-    });
+      this.patrocinadoresInfo = this.aboutData.patrocinadores;
+      this.patrocinadorTitulo = this.patrocinadoresInfo[0].titulo;
+      this.patrocinadorDescripcion = this.patrocinadoresInfo[0].descripcion;
+    } else {
+      this.aboutDataSus =  this.services.getAboutInfo().subscribe(data => {
+        this.aboutData = data;
+        this.infoQUE = this.aboutData.que;
+        this.infoQUIEN = this.aboutData.quien;
+        this.cuando = this.aboutData.cuando;
+        this.telefono = this.aboutData.telefono;
+        this.seletedInfo = this.infoQUE;
+        this.urlFoto = '/assets/identidad/2017-2/identidad/logoHED2017-2.png';
+        this.patrocinadoresInfo = this.aboutData.patrocinadores;
+        this.patrocinadorTitulo = this.patrocinadoresInfo[0].titulo;
+        this.patrocinadorDescripcion = this.patrocinadoresInfo[0].descripcion;
+
+      });
+    }
   }
 
   ngOnDestroy(): void {
-   this.aboutDataSus.unsubscribe();
+    if (this.aboutDataSus) {
+      this.aboutDataSus.unsubscribe();
+    }
    clearInterval(this.intervaloCambio);
   }
 

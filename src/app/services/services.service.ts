@@ -13,23 +13,30 @@ export class GeneralServices {
 
 
  private data_identidadRef: AngularFireObject<any[]>;
- private  data_identidad: Observable<any[]>;
+ private data_identidad: Observable<any[]>;
+
  private general_infoRef: AngularFireObject<any[]>;
  private general_info: Observable<any[]>;
+
  private ponentesDataRef: AngularFireObject<any[]>;
  private ponentesData: Observable<any[]>;
  private ponentesDataSus: Subscription;
  private ponentesDataInfo: any[];
+
  private agendaDataRef: AngularFireObject<any[]>;
  private agendaData: Observable<any[]>;
  private agendaDataSus: Subscription;
  private agendaDataInfo: any[];
+
  private galeriaDataRef: AngularFireObject<any[]>;
  private galeriaData: Observable<any[]>;
  private galeriaDataSus: Subscription;
  private galeriaDataInfo: any[];
+
  private aboutDataRef: AngularFireObject<any[]>;
  private aboutData: Observable<any[]>;
+ private aboutDataSus: Subscription;
+ private aboutDataInfo: any[];
 
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
@@ -73,39 +80,52 @@ export class GeneralServices {
     // cargar About
     this.aboutDataRef = this.db.object(epoca + '/about/' + idioma);
     this.aboutData = this.aboutDataRef.valueChanges();
+    this.aboutDataSus = this.aboutData.subscribe(data => {
+      this.aboutDataInfo = data;
+    });
   }
 
   getIdentidad(): Observable<any[]> {
     return this.data_identidad;
   }
-
   getGeneral_Info(): Observable<any[]> {
     return this.general_info;
-}
+  }
 
- getPonentesInfo(): Observable<any[]> {
+
+
+  getPonentesInfo(): Observable<any[]> {
     return this.ponentesData;
- }
- getPonentesInfoFinal(): any[] {
+  }
+  getPonentesInfoFinal(): any[] {
     return this.ponentesDataInfo;
- }
+  }
 
- getAgendaInfo(): Observable<any[]> {
+
+
+  getAgendaInfo(): Observable<any[]> {
     return this.agendaData;
- }
- getAgendaInfoFinal(): any[] {
+  }
+  getAgendaInfoFinal(): any[] {
     return this.agendaDataInfo;
- }
+  }
 
- getGaleriaInfo(): Observable<any[]> {
+
+
+  getGaleriaInfo(): Observable<any[]> {
     return this.galeriaData;
- }
- getGaleriaInfoFinal(): any[]{
+  }
+  getGaleriaInfoFinal(): any[] {
     return this.galeriaDataInfo;
- }
+  }
+
+
 
  getAboutInfo(): Observable<any[]> {
     return this.aboutData;
+ }
+ getAboutInfoFinal(): any[] {
+    return this.aboutDataInfo;
  }
 
 }
