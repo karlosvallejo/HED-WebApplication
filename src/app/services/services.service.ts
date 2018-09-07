@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {AngularFireDatabase, AngularFireObject} from 'angularfire2/database';
-import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 
@@ -39,7 +38,7 @@ export class GeneralServices {
  private aboutDataInfo: any[];
 
 
-  constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase) {
+  constructor(public db: AngularFireDatabase) {
     this.evento_actual = '2017-2';
     this.initIdiomas('es');
     this.loadDatosHedPorEpoca(this.evento_actual, this.idiomaActual);

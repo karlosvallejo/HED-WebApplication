@@ -1,14 +1,13 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {GeneralServices} from './services/services.service';
 import {routerTransition} from './animations/router.animations';
+import {GeneralServices} from './services/services.service';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  animations: [routerTransition],
-  providers: [GeneralServices]
+  animations: [routerTransition]
 })
 export class AppComponent implements OnInit, AfterViewInit {
   canvasito: any;
