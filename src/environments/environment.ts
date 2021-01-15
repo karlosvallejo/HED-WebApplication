@@ -14,11 +14,12 @@ export const environment = {
     messagingSenderId: '687133183435'
   },
   firebase: {
-    apiKey: 'AIzaSyB2FnCENfDq91qwEPIlg-tUTIE4hlkn1cw',
-    authDomain: 'hoyesdisenoapp.firebaseapp.com',
-    databaseURL: 'https://hoyesdisenoapp.firebaseio.com',
-    projectId: 'hoyesdisenoapp',
-    storageBucket: 'hoyesdisenoapp.appspot.com',
-    messagingSenderId: '731835721273'
+    apiKey: 'AIzaSyDocWqY98tFnpwbZ6iX8rZiqbsUTGWZU0k',
+    authDomain: 'hedweb2017-2.firebaseapp.com',
+    databaseURL: 'https://hedweb2017-2.firebaseio.com',
+    projectId: 'hedweb2017-2',
+    storageBucket: 'hedweb2017-2.appspot.com',
+    messagingSenderId: '230973982226',
+    appId: '1:230973982226:web:b3b725bce15ef12a1d7acb'
   }
 };
